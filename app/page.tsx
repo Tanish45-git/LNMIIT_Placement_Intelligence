@@ -78,9 +78,9 @@ export default function Home() {
       setSources(src);
       setLogs(l);
 
-      // Default to Class of 2024 (audited) or first batch
+      // Default to Class of 2026 (Live Ongoing Drive)
       if (!selectedBatch && b.length > 0) {
-        const defaultBatch = b.find((item) => item.graduationYear === 2024) || b[0];
+        const defaultBatch = b.find((item) => item.graduationYear === 2026) || b[0];
         setSelectedBatch(defaultBatch);
       }
     } finally {
@@ -156,6 +156,7 @@ export default function Home() {
           selectedBatch={selectedBatch}
           onSelectBatch={setSelectedBatch}
           currentStat={currentStat}
+          onQuickUpdate2026={() => setIsAdminOpen(true)}
         />
 
         {/* Tab-driven Content Switcher */}

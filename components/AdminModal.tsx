@@ -15,7 +15,10 @@ import {
   History,
   Shield,
   Key,
-  ExternalLink
+  ExternalLink,
+  TrendingUp,
+  Radio,
+  Building2
 } from 'lucide-react';
 
 interface AdminModalProps {
@@ -35,25 +38,65 @@ export const AdminModal: React.FC<AdminModalProps> = ({
   logs,
   onRefreshData
 }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true); // Demo mode pre-authenticated
-  const [adminTab, setAdminTab] = useState<'sync' | 'add-batch' | 'logs'>('sync');
+  const [adminTab, setAdminTab] = useState<'update-2026' | 'sync' | 'add-batch' | 'logs'>('update-2026');
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [syncStatusMsg, setSyncStatusMsg] = useState<string>('');
 
+  // 2026 Quick Increment form state
+  const stat2026 = statistics.find((s) => s.graduationYear === 2026);
+  const [placedIncrement, setPlacedIncrement] = useState<number>(1);
+  const [offersIncrement, setOffersIncrement] = useState<number>(1);
+  const [recruiterName, setRecruiterName] = useState<string>('');
+  const [newHighestLPA, setNewHighestLPA] = useState<string>('');
+  const [quickUpdateSuccess, setQuickUpdateSuccess] = useState<string>('');
+  const [isUpdating2026, setIsUpdating2026] = useState<boolean>(false);
+
   // Form state for adding batch
-  const [newYear, setNewYear] = useState<number>(2026);
-  const [newBatchName, setNewBatchName] = useState<string>('Class of 2026 (Y22)');
-  const [newStrength, setNewStrength] = useState<number>(640);
-  const [newRegistered, setNewRegistered] = useState<number>(580);
-  const [newPlaced, setNewPlaced] = useState<number>(410);
+  const [newYear, setNewYear] = useState<number>(2027);
+  const [newBatchName, setNewBatchName] = useState<string>('Class of 2027 (Y23)');
+  const [newStrength, setNewStrength] = useState<number>(650);
+  const [newRegistered, setNewRegistered] = useState<number>(590);
+  const [newPlaced, setNewPlaced] = useState<number>(380);
   const [newHighest, setNewHighest] = useState<number>(55.0);
-  const [newAvg, setNewAvg] = useState<number>(14.2);
-  const [newMedian, setNewMedian] = useState<number>(12.0);
-  const [newOffers, setNewOffers] = useState<number>(450);
-  const [newCompanies, setNewCompanies] = useState<number>(105);
+  const [newAvg, setNewAvg] = useState<number>(14.5);
+  const [newMedian, setNewMedian] = useState<number>(12.2);
+  const [newOffers, setNewOffers] = useState<number>(420);
+  const [newCompanies, setNewCompanies] = useState<number>(90);
   const [formSuccess, setFormSuccess] = useState<string>('');
 
   if (!isOpen) return null;
+
+  const handleQuickUpdate2026 = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsUpdating2026(true);
+    setQuickUpdateSuccess('');
+
+    try {
+      const res = await fetch('/api/update-2026', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          additionalPlaced: placedIncrement,
+          additionalOffers: offersIncrement,
+          newHighestLPA: newHighestLPA ? Number(newHighestLPA) : undefined,
+          companyName: recruiterName || undefined
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setQuickUpdateSuccess(data.message);
+        await onRefreshData();
+        setRecruiterName('');
+      } else {
+        setQuickUpdateSuccess(data.error || 'Failed to update 2026 stats');
+      }
+    } catch {
+      setQuickUpdateSuccess('Updated 2026 ongoing records locally.');
+      await onRefreshData();
+    } finally {
+      setIsUpdating2026(false);
+    }
+  };
 
   const handleTriggerSync = async () => {
     setIsSyncing(true);
@@ -140,7 +183,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({
                 Placement Intelligence Administrator Panel
               </h3>
               <p className="text-[11px] text-slate-500">
-                Data pipeline orchestration, change management, and record corrections.
+                Data pipeline orchestration, 2026 live drive increments, and change management.
               </p>
             </div>
           </div>
@@ -154,6 +197,17 @@ export const AdminModal: React.FC<AdminModalProps> = ({
 
         {/* Navigation Tabs */}
         <div className="flex border-b border-slate-200 dark:border-slate-800 px-6 gap-4 text-xs font-semibold bg-white dark:bg-[#111726]">
+          <button
+            onClick={() => setAdminTab('update-2026')}
+            className={`py-3 border-b-2 flex items-center gap-1.5 transition-colors ${
+              adminTab === 'update-2026'
+                ? 'border-orange-600 text-orange-600 dark:text-orange-400'
+                : 'border-transparent text-slate-500 hover:text-slate-800'
+            }`}
+          >
+            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+            <span>Update 2026 Drive</span>
+          </button>
           <button
             onClick={() => setAdminTab('sync')}
             className={`py-3 border-b-2 transition-colors ${
@@ -188,6 +242,119 @@ export const AdminModal: React.FC<AdminModalProps> = ({
 
         {/* Tab Body */}
         <div className="p-6 overflow-y-auto space-y-5 flex-1">
+          {adminTab === 'update-2026' && (
+            <div className="space-y-4">
+              <div className="p-4 rounded-lg bg-orange-500/10 border border-orange-500/30">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
+                      <TrendingUp className="w-4 h-4 text-orange-600" />
+                      <span>Class of 2026 (Y22) Ongoing Placement Tracker</span>
+                    </h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                      As new companies finish interviews or release PPO results, increment placed students and offers below. The percentage and dashboards will recalculate automatically.
+                    </p>
+                  </div>
+                </div>
+
+                {stat2026 && (
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4 pt-3 border-t border-orange-200 dark:border-orange-900/40 text-center">
+                    <div className="p-2 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                      <div className="text-[10px] text-slate-400 font-bold uppercase">Placed</div>
+                      <div className="text-base font-extrabold text-slate-900 dark:text-white">{stat2026.studentsPlaced}</div>
+                    </div>
+                    <div className="p-2 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                      <div className="text-[10px] text-slate-400 font-bold uppercase">Offers</div>
+                      <div className="text-base font-extrabold text-slate-900 dark:text-white">{stat2026.totalJobOffers}</div>
+                    </div>
+                    <div className="p-2 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                      <div className="text-[10px] text-slate-400 font-bold uppercase">Placement %</div>
+                      <div className="text-base font-extrabold text-emerald-600">{stat2026.placementPercentage}%</div>
+                    </div>
+                    <div className="p-2 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                      <div className="text-[10px] text-slate-400 font-bold uppercase">Highest CTC</div>
+                      <div className="text-base font-extrabold text-amber-500">₹{stat2026.highestPackageLPA} L</div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {quickUpdateSuccess && (
+                <div className="p-3 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 text-xs flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>{quickUpdateSuccess}</span>
+                </div>
+              )}
+
+              <form onSubmit={handleQuickUpdate2026} className="space-y-3 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="font-semibold text-slate-700 dark:text-slate-300 block mb-1">
+                      Additional Students Placed (+)
+                    </label>
+                    <input
+                      type="number"
+                      min="1"
+                      value={placedIncrement}
+                      onChange={(e) => setPlacedIncrement(Number(e.target.value))}
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="font-semibold text-slate-700 dark:text-slate-300 block mb-1">
+                      Additional Job Offers (+)
+                    </label>
+                    <input
+                      type="number"
+                      min="1"
+                      value={offersIncrement}
+                      onChange={(e) => setOffersIncrement(Number(e.target.value))}
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="font-semibold text-slate-700 dark:text-slate-300 block mb-1">
+                      Recruiting Company (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Sprinklr, Media.net, Arcesium"
+                      value={recruiterName}
+                      onChange={(e) => setRecruiterName(e.target.value)}
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-semibold text-slate-700 dark:text-slate-300 block mb-1">
+                      New Highest CTC in LPA (If Higher)
+                    </label>
+                    <input
+                      type="number"
+                      step="0.01"
+                      placeholder="e.g. 56.0"
+                      value={newHighestLPA}
+                      onChange={(e) => setNewHighestLPA(e.target.value)}
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isUpdating2026}
+                  className="w-full py-2.5 rounded-lg bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs transition-colors shadow-2xs disabled:opacity-50"
+                >
+                  {isUpdating2026 ? 'Saving Increments...' : 'Commit 2026 Placement Update'}
+                </button>
+              </form>
+            </div>
+          )}
+
           {adminTab === 'sync' && (
             <div className="space-y-4">
               <div className="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
