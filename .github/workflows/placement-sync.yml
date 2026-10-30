@@ -1,0 +1,48 @@
+name: LNMIIT Placement Intelligence 24h Auto-Sync
+
+on:
+  schedule:
+    # Runs daily at 02:00 UTC (07:30 AM IST)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  sync-placement-records:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Scraper Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/scraper/requirements.txt
+
+      - name: Run Scraper Unit Tests & Invariant Validations
+        run: |
+          python scripts/scraper/test_scraper.py
+
+      - name: Execute LNMIIT Placement Data Pipeline
+        env:
+          SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          python scripts/scraper/scraper.py
+
+      - name: Trigger Portal Cache Revalidation & Sync
+        if: env.PORTAL_DEPLOYMENT_URL != ''
+        env:
+          PORTAL_DEPLOYMENT_URL: ${{ secrets.PORTAL_DEPLOYMENT_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          curl -X POST "${PORTAL_DEPLOYMENT_URL}/api/sync" \
+            -H "Authorization: Bearer ${CRON_SECRET}" \
+            -H "Content-Type: application/json"
