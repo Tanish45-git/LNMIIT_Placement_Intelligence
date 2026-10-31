@@ -99,8 +99,8 @@ export interface CompanyRecruitmentRecord {
   graduationYear: number;
   jobRoles: string[];
   eligibleBranches: BranchCode[];
-  packageLPA?: number;
-  stipendMonthly?: number;
+  packageLPA?: number | null;
+  stipendMonthly?: number | null;
   hiresCount?: number;
   internshipOffered: boolean;
   fullTimeOffered: boolean;

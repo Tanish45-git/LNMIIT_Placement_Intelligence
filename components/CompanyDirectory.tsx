@@ -12,8 +12,11 @@ import {
   Award,
   Layers,
   CheckCircle2,
-  Filter
+  Filter,
+  Radio,
+  LayoutGrid
 } from 'lucide-react';
+import { LiveDriveTable } from '@/components/LiveDriveTable';
 
 interface CompanyDirectoryProps {
   companies: Company[];
@@ -28,6 +31,7 @@ export const CompanyDirectory: React.FC<CompanyDirectoryProps> = ({
   const [selectedTier, setSelectedTier] = useState<string>('all');
   const [selectedBranch, setSelectedBranch] = useState<string>('all');
   const [offerTypeFilter, setOfferTypeFilter] = useState<'all' | 'fulltime' | 'internship'>('all');
+  const [activeView, setActiveView] = useState<'live' | 'directory'>('live');
 
   const tiers = [
     'all',
@@ -76,6 +80,37 @@ export const CompanyDirectory: React.FC<CompanyDirectoryProps> = ({
     });
   }, [enrichedCompanies, searchTerm, selectedTier, selectedBranch, offerTypeFilter]);
 
+  if (activeView === 'live') {
+    return (
+      <div className="space-y-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+          <div className="inline-flex rounded-md border border-slate-200 bg-white p-1 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+            <button
+              onClick={() => setActiveView('live')}
+              aria-pressed="true"
+              className="inline-flex items-center gap-1.5 rounded px-3 py-1.5 text-xs font-semibold text-white bg-blue-900 dark:bg-blue-700"
+            >
+              <Radio className="h-3.5 w-3.5" />
+              Live drive
+            </button>
+            <button
+              onClick={() => setActiveView('directory')}
+              aria-pressed="false"
+              className="inline-flex items-center gap-1.5 rounded px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+            >
+              <LayoutGrid className="h-3.5 w-3.5" />
+              Recruiter directory
+            </button>
+          </div>
+          <span className="text-[10px] text-slate-500 dark:text-slate-400 sm:text-[11px]">
+            Current cycle · Filter by company, branch, or status
+          </span>
+        </div>
+        <LiveDriveTable />
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       {/* Header and Filter Toolbar */}
@@ -92,6 +127,23 @@ export const CompanyDirectory: React.FC<CompanyDirectoryProps> = ({
           <div className="text-xs text-slate-500 font-medium">
             Showing <span className="font-bold text-slate-900 dark:text-white">{filteredCompanies.length}</span> of {companies.length} companies
           </div>
+        </div>
+        <div className="inline-flex rounded-md border border-slate-200 bg-white p-1 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+          <button
+            onClick={() => setActiveView('live')}
+            className="inline-flex items-center gap-1.5 rounded px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            <Radio className="h-3.5 w-3.5" />
+            Live drive
+          </button>
+          <button
+            onClick={() => setActiveView('directory')}
+            aria-pressed="true"
+            className="inline-flex items-center gap-1.5 rounded bg-blue-900 px-3 py-1.5 text-xs font-semibold text-white dark:bg-blue-700"
+          >
+            <LayoutGrid className="h-3.5 w-3.5" />
+            Recruiter directory
+          </button>
         </div>
 
         {/* Filter Controls Bar */}

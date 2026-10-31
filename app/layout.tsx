@@ -2,9 +2,25 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'LNMIIT Placement Intelligence — Official Audited Records & Analytics',
+  metadataBase: new URL('https://lnmiitplacementintelligence.vercel.app'),
+  title: 'LNMIIT Placement Intelligence',
   description:
-    'Comprehensive historical and real-time placement analytics for The LNM Institute of Information Technology (LNMIIT), Jaipur. Verified records from 2007 to present.',
+    'Explore LNMIIT Jaipur placement outcomes, batch-wise analytics, recruiter records, and historical trends with source-linked data.',
+  openGraph: {
+    title: 'LNMIIT Placement Intelligence',
+    description:
+      'Explore LNMIIT Jaipur placement outcomes, recruiter records, and historical placement trends.',
+    url: 'https://lnmiitplacementintelligence.vercel.app',
+    siteName: 'LNMIIT Placement Intelligence',
+    locale: 'en_IN',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LNMIIT Placement Intelligence',
+    description:
+      'Explore LNMIIT Jaipur placement outcomes, recruiter records, and historical placement trends.'
+  },
   keywords: [
     'LNMIIT',
     'LNMIIT Placements',

@@ -8,8 +8,7 @@ import {
   Company,
   CompanyRecruitmentRecord,
   InternshipStatistics,
-  PlacementSource,
-  DataUpdateLog
+  PlacementSource
 } from '@/lib/types/placement';
 import {
   getBatches,
@@ -18,8 +17,7 @@ import {
   getCompanies,
   getCompanyRecruitment,
   getInternshipStatistics,
-  getSources,
-  getAuditLogs
+  getSources
 } from '@/lib/supabase';
 
 import { Navbar } from '@/components/Navbar';
@@ -33,13 +31,11 @@ import { PackageAnalytics } from '@/components/PackageAnalytics';
 import { InternshipAnalytics } from '@/components/InternshipAnalytics';
 import { ReportsDownloads } from '@/components/ReportsDownloads';
 import { AboutDataSection } from '@/components/AboutDataModal';
-import { AdminModal } from '@/components/AdminModal';
 import { SearchModal } from '@/components/SearchModal';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<string>('overview');
   const [isDark, setIsDark] = useState<boolean>(false);
-  const [isAdminOpen, setIsAdminOpen] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
   // Data states
@@ -50,7 +46,6 @@ export default function Home() {
   const [recruitment, setRecruitment] = useState<CompanyRecruitmentRecord[]>([]);
   const [internships, setInternships] = useState<InternshipStatistics[]>([]);
   const [sources, setSources] = useState<PlacementSource[]>([]);
-  const [logs, setLogs] = useState<DataUpdateLog[]>([]);
 
   const [selectedBatch, setSelectedBatch] = useState<PlacementBatch | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -58,15 +53,14 @@ export default function Home() {
   // Load placement data
   const loadData = async () => {
     try {
-      const [b, s, br, c, r, i, src, l] = await Promise.all([
+      const [b, s, br, c, r, i, src] = await Promise.all([
         getBatches(),
         getStatistics(),
         getBranchStatistics(),
         getCompanies(),
         getCompanyRecruitment(),
         getInternshipStatistics(),
-        getSources(),
-        getAuditLogs()
+        getSources()
       ]);
 
       setBatches(b);
@@ -76,7 +70,6 @@ export default function Home() {
       setRecruitment(r);
       setInternships(i);
       setSources(src);
-      setLogs(l);
 
       // Default to Class of 2026 (Live Ongoing Drive)
       if (!selectedBatch && b.length > 0) {
@@ -134,6 +127,7 @@ export default function Home() {
   const previousStat = statistics.find(
     (s) => s.graduationYear === selectedBatch.graduationYear - 1
   );
+  const comparablePreviousStat = selectedBatch.status === 'completed' ? previousStat : undefined;
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50/60 dark:bg-[#090d16] text-slate-900 dark:text-slate-100 transition-colors">
@@ -144,32 +138,32 @@ export default function Home() {
         isDark={isDark}
         toggleTheme={toggleTheme}
         onOpenSearch={() => setIsSearchOpen(true)}
-        onOpenAdmin={() => setIsAdminOpen(true)}
-        lastSyncTime={logs[0]?.timestamp}
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        {/* Hero Section (Always visible across tabs for batch context) */}
-        <HeroSection
-          batches={batches}
-          selectedBatch={selectedBatch}
-          onSelectBatch={setSelectedBatch}
-          currentStat={currentStat}
-          onQuickUpdate2026={() => setIsAdminOpen(true)}
-        />
+      <main className="flex-1 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-10 pb-16">
+        {activeTab === 'overview' && (
+          <div className="pt-6">
+            <HeroSection
+              batches={batches}
+              selectedBatch={selectedBatch}
+              onSelectBatch={setSelectedBatch}
+              currentStat={currentStat}
+            />
+          </div>
+        )}
 
         {/* Tab-driven Content Switcher */}
-        <div className="mt-8 space-y-8">
+        <div className={`${activeTab === 'overview' ? 'mt-7' : 'mt-6'} space-y-8`}>
           {activeTab === 'overview' && (
             <>
               {/* Primary KPI Cards */}
               {currentStat && (
-                <KPICards currentStat={currentStat} previousStat={previousStat} />
+                <KPICards currentStat={currentStat} previousStat={comparablePreviousStat} />
               )}
 
               {/* Multi-Year Interactive Trends */}
-              <PlacementTrends statistics={statistics} isDark={isDark} />
+              <PlacementTrends statistics={statistics} batches={batches} isDark={isDark} />
             </>
           )}
 
@@ -210,30 +204,14 @@ export default function Home() {
             </span>
             <span>• Independent Audited Placement Analytics</span>
           </div>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://placements.lnmiit.ac.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-orange-500 transition-colors"
-            >
-              Official T&amp;P Portal
-            </a>
-            <a
-              href="https://lnmiit.ac.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-orange-500 transition-colors"
-            >
-              LNMIIT Jaipur Main
-            </a>
-            <button
-              onClick={() => setIsAdminOpen(true)}
-              className="hover:text-orange-500 transition-colors"
-            >
-              Admin Access
-            </button>
-          </div>
+          <a
+            href="https://placements.lnmiit.ac.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-orange-500 transition-colors"
+          >
+            Official T&amp;P Portal
+          </a>
         </div>
       </footer>
 
@@ -246,16 +224,6 @@ export default function Home() {
         statistics={statistics}
         onSelectBatch={setSelectedBatch}
         onNavigateTab={setActiveTab}
-      />
-
-      {/* Admin Panel Modal */}
-      <AdminModal
-        isOpen={isAdminOpen}
-        onClose={() => setIsAdminOpen(false)}
-        batches={batches}
-        statistics={statistics}
-        logs={logs}
-        onRefreshData={loadData}
       />
     </div>
   );

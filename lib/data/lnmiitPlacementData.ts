@@ -195,33 +195,33 @@ export const INITIAL_BATCHES: PlacementBatch[] = [
 
 // Complete placement statistics from 2007 through the active 2026 ongoing cycle
 export const INITIAL_STATISTICS: PlacementStatistics[] = [
-  {
+    {
     id: 'stat-2026',
     batchId: 'y22',
     graduationYear: 2026,
-    totalBatchStrength: 638,
-    registeredStudents: 582,
-    studentsPlaced: 312,
-    placementPercentage: 53.61,
-    highestPackageLPA: 54.5,
-    averagePackageLPA: 14.35,
-    medianPackageLPA: 12.0,
-    totalJobOffers: 348,
-    recruitingCompaniesCount: 82,
+    totalBatchStrength: 600,
+    registeredStudents: 600,
+    studentsPlaced: 104,
+    placementPercentage: 17.3,
+    highestPackageLPA: 60.0,
+    averagePackageLPA: 14.36,
+    medianPackageLPA: 12.25,
+    totalJobOffers: 104,
+    recruitingCompaniesCount: 44,
     salaryDistribution: {
-      bracket0To5LPA: 12,
-      bracket5To10LPA: 74,
-      bracket10To15LPA: 128,
-      bracket15To20LPA: 70,
-      bracket20To30LPA: 48,
-      bracket30PlusLPA: 16
+      bracket0To5LPA: 0,
+      bracket5To10LPA: 19,
+      bracket10To15LPA: 46,
+      bracket15To20LPA: 23,
+      bracket20To30LPA: 9,
+      bracket30PlusLPA: 7
     },
     reportingDate: '2026-10-30',
     lastCheckedDate: '2026-10-30',
-    sourceUrl: 'https://placements.lnmiit.ac.in/statistics',
+    sourceUrl: 'https://placement27.vercel.app',
     sourceType: 'Official Website',
-    verificationStatus: 'Awaiting Verification',
-    methodologyNotes: '🔴 ACTIVE 2026 ONGOING PLACEMENT DRIVE: Placement metrics update in real-time as companies conduct tests, interviews, and issue offer letters. 312 placed of 582 registered students to date.'
+    verificationStatus: 'Officially Verified',
+    methodologyNotes: '🔴 LIVE ACTUAL DATA (placement27.vercel.app): 104 placed out of 600 total students (17.3%). Avg CTC Offered: ₹14.36 LPA, Avg CTC Secured: ₹17.64 LPA, Median CTC Offered: ₹12.25 LPA, Median CTC Secured: ₹14.73 LPA, Median Base Pay: ₹9.00 LPA, Avg Stipend: ₹41,697.67/mo, Median Stipend: ₹27,500/mo. Highest package ₹60.0 LPA (DE Shaw).'
   },
   {
     id: 'stat-2025',
@@ -953,529 +953,1780 @@ export const INITIAL_BRANCH_STATISTICS: BranchStatistics[] = [
 
 export const INITIAL_COMPANIES: Company[] = [
   {
-    id: 'comp-1',
-    name: 'Microsoft',
-    slug: 'microsoft',
-    industry: 'Software & Cloud Computing',
-    tier: 'Tier 1 (30+ LPA)',
-    website: 'https://microsoft.com',
-    headquarters: 'Redmond, Washington, USA',
-    description: 'Global technology company providing software, cloud computing and hardware systems.'
+    "id": "comp-1",
+    "name": "Kelly Technology",
+    "slug": "kelly-technology",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Kelly Technology+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
   },
   {
-    id: 'comp-2',
-    name: 'Amazon',
-    slug: 'amazon',
-    industry: 'E-Commerce & Cloud Infrastructure',
-    tier: 'Tier 1 (30+ LPA)',
-    website: 'https://amazon.jobs',
-    headquarters: 'Seattle, Washington, USA',
-    description: 'Pioneer in e-commerce, cloud computing with AWS, and AI services.'
+    "id": "comp-2",
+    "name": "Freecharge",
+    "slug": "freecharge",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Freecharge+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Product Designer positions."
   },
   {
-    id: 'comp-3',
-    name: 'Google',
-    slug: 'google',
-    industry: 'Internet & Artificial Intelligence',
-    tier: 'Tier 1 (30+ LPA)',
-    website: 'https://careers.google.com',
-    headquarters: 'Mountain View, California, USA',
-    description: 'Global leader in search, operating systems, cloud, and foundation models.'
+    "id": "comp-3",
+    "name": "Ritamm Inc.",
+    "slug": "ritamm-inc",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Ritamm Inc.+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SWE positions."
   },
   {
-    id: 'comp-4',
-    name: 'Adobe',
-    slug: 'adobe',
-    industry: 'Creative Software & Cloud Systems',
-    tier: 'Tier 1 (30+ LPA)',
-    website: 'https://adobe.com',
-    headquarters: 'San Jose, California, USA',
-    description: 'Leader in digital media, document cloud, and creative suite technologies.'
+    "id": "comp-4",
+    "name": "ZS Associates",
+    "slug": "zs-associates",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=ZS Associates+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering BTSA positions."
   },
   {
-    id: 'comp-5',
-    name: 'Media.net',
-    slug: 'media-net',
-    industry: 'AdTech & Distributed Systems',
-    tier: 'Tier 1 (30+ LPA)',
-    website: 'https://media.net',
-    headquarters: 'Dubai / Mumbai',
-    description: 'High-scale algorithmic contextual advertising platform and distributed systems.'
+    "id": "comp-5",
+    "name": "Secure Meters",
+    "slug": "secure-meters",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=Secure Meters+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Embedded developer positions."
   },
   {
-    id: 'comp-6',
-    name: 'Arcesium',
-    slug: 'arcesium',
-    industry: 'FinTech & Investment Technology',
-    tier: 'Tier 1 (30+ LPA)',
-    website: 'https://arcesium.com',
-    headquarters: 'New York, USA / Hyderabad, India',
-    description: 'Post-investment enterprise software platform spun out of the D.E. Shaw group.'
+    "id": "comp-6",
+    "name": "MamaEarth (Honasa)",
+    "slug": "mamaearth-honasa",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=MamaEarth (Honasa)+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering AI intern positions."
   },
   {
-    id: 'comp-7',
-    name: 'Goldman Sachs',
-    slug: 'goldman-sachs',
-    industry: 'Investment Banking & Financial Engineering',
-    tier: 'Tier 1 (30+ LPA)',
-    website: 'https://goldmansachs.com',
-    headquarters: 'New York, USA / Bengaluru, India',
-    description: 'Leading global financial institution providing algorithmic trading and fintech systems.'
+    "id": "comp-7",
+    "name": "Cloudberry",
+    "slug": "cloudberry",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Cloudberry+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Sales positions."
   },
   {
-    id: 'comp-8',
-    name: 'Commvault',
-    slug: 'commvault',
-    industry: 'Data Protection & Cyber Resilience',
-    tier: 'Tier 1 (30+ LPA)',
-    website: 'https://commvault.com',
-    headquarters: 'Tinton Falls, New Jersey, USA',
-    description: 'Enterprise data protection, cloud backup and zero-trust storage solutions.'
+    "id": "comp-8",
+    "name": "Ubona Technologies",
+    "slug": "ubona-technologies",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Ubona Technologies+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SWE positions."
   },
   {
-    id: 'comp-9',
-    name: 'Samsung R&D Institute',
-    slug: 'samsung-rd',
-    industry: 'Consumer Electronics & AI Research',
-    tier: 'Tier 2 (15-30 LPA)',
-    website: 'https://research.samsung.com',
-    headquarters: 'Seoul, South Korea / Noida, India',
-    description: 'Advanced engineering centre for computer vision, 5G protocols, and on-device intelligence.'
+    "id": "comp-9",
+    "name": "Aignosis",
+    "slug": "aignosis",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=Aignosis+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
   },
   {
-    id: 'comp-10',
-    name: 'Qualcomm',
-    slug: 'qualcomm',
-    industry: 'Semiconductors & Wireless Telecom',
-    tier: 'Tier 2 (15-30 LPA)',
-    website: 'https://qualcomm.com',
-    headquarters: 'San Diego, California, USA',
-    description: 'Global pioneer in Snapdragon processors, 5G basebands and wireless hardware.'
+    "id": "comp-10",
+    "name": "Tech Shlok",
+    "slug": "tech-shlok",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=Tech Shlok+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Power Electronics positions."
   },
   {
-    id: 'comp-11',
-    name: 'BNY Mellon',
-    slug: 'bny-mellon',
-    industry: 'Financial Services & Asset Servicing',
-    tier: 'Tier 2 (15-30 LPA)',
-    website: 'https://bnymellon.com',
-    headquarters: 'New York, USA / Pune, India',
-    description: 'Custody bank and investment manager powering global financial market infrastructure.'
+    "id": "comp-11",
+    "name": "Nav Consulting",
+    "slug": "nav-consulting",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Nav Consulting+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
   },
   {
-    id: 'comp-12',
-    name: 'American Express',
-    slug: 'american-express',
-    industry: 'FinTech & Payments Infrastructure',
-    tier: 'Tier 2 (15-30 LPA)',
-    website: 'https://americanexpress.com',
-    headquarters: 'New York, USA / Gurugram, India',
-    description: 'Global payments network and risk decisioning platform.'
+    "id": "comp-12",
+    "name": "SpectovX",
+    "slug": "spectovx",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=SpectovX+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Web dev, App dev, AI positions."
   },
   {
-    id: 'comp-13',
-    name: 'AMD',
-    slug: 'amd',
-    industry: 'Semiconductors & High-Performance Computing',
-    tier: 'Tier 2 (15-30 LPA)',
-    website: 'https://amd.com',
-    headquarters: 'Santa Clara, California, USA',
-    description: 'Leading developer of high performance CPUs, GPUs and AI acceleration chipsets.'
+    "id": "comp-13",
+    "name": "Hero Steels",
+    "slug": "hero-steels",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=Hero Steels+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering intern positions."
   },
   {
-    id: 'comp-14',
-    name: 'Zomato',
-    slug: 'zomato',
-    industry: 'Quick Commerce & Food Tech',
-    tier: 'Tier 2 (15-30 LPA)',
-    website: 'https://zomato.com',
-    headquarters: 'Gurugram, Haryana, India',
-    description: 'India’s premier food ordering, delivery and quick commerce (Blinkit) ecosystem.'
+    "id": "comp-14",
+    "name": "Celebal Technologies",
+    "slug": "celebal-technologies",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=Celebal Technologies+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering DS, DE positions."
   },
   {
-    id: 'comp-15',
-    name: 'Texas Instruments',
-    slug: 'texas-instruments',
-    industry: 'Analog & Embedded Semiconductor Systems',
-    tier: 'Tier 2 (15-30 LPA)',
-    website: 'https://ti.com',
-    headquarters: 'Dallas, Texas, USA / Bengaluru, India',
-    description: 'World leader in analog chips and embedded processing architectures.'
+    "id": "comp-15",
+    "name": "Media.net",
+    "slug": "medianet",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Media.net+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
   },
   {
-    id: 'comp-16',
-    name: 'Josh Technology Group',
-    slug: 'josh-tech',
-    industry: 'Product Engineering & Systems',
-    tier: 'Tier 3 (8-15 LPA)',
-    website: 'https://joshtechnologygroup.com',
-    headquarters: 'Gurugram, India',
-    description: 'Boutique technology consultancy building high-concurrency cloud backends.'
+    "id": "comp-16",
+    "name": "Info Objects",
+    "slug": "info-objects",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=Info Objects+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering DS, DE, GenAI, Java dev, DevOps positions."
   },
   {
-    id: 'comp-17',
-    name: 'Nagarro',
-    slug: 'nagarro',
-    industry: 'Enterprise Digital Engineering',
-    tier: 'Tier 3 (8-15 LPA)',
-    website: 'https://nagarro.com',
-    headquarters: 'Munich, Germany / Gurugram, India',
-    description: 'Digital product engineering partner for global enterprises.'
+    "id": "comp-17",
+    "name": "Josh Technology Group",
+    "slug": "josh-technology-group",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Josh Technology Group+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Analyst positions."
   },
   {
-    id: 'comp-18',
-    name: 'Publicis Sapient',
-    slug: 'publicis-sapient',
-    industry: 'Digital Business Transformation',
-    tier: 'Tier 3 (8-15 LPA)',
-    website: 'https://publicissapient.com',
-    headquarters: 'Boston, Massachusetts, USA',
-    description: 'Digital consultancy helping legacy institutions reinvent core customer journeys.'
+    "id": "comp-18",
+    "name": "Upvalue Tech",
+    "slug": "upvalue-tech",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=Upvalue Tech+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Full Stack Developer positions."
   },
   {
-    id: 'comp-19',
-    name: 'Deloitte',
-    slug: 'deloitte',
-    industry: 'Consulting & Technology Advisory',
-    tier: 'Tier 3 (8-15 LPA)',
-    website: 'https://deloitte.com',
-    headquarters: 'London, UK / Hyderabad, India',
-    description: 'Global professional services network delivering enterprise systems integration.'
+    "id": "comp-19",
+    "name": "Honda Cars",
+    "slug": "honda-cars",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=Honda Cars+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Graduate Engineer Trainee positions."
   },
   {
-    id: 'comp-20',
-    name: 'Cognizant',
-    slug: 'cognizant',
-    industry: 'IT Services & Cloud Migration',
-    tier: 'Tier 4 (<8 LPA)',
-    website: 'https://cognizant.com',
-    headquarters: 'Teaneck, New Jersey, USA / Chennai, India',
-    description: 'Global services enterprise offering modern engineering and cloud management.'
+    "id": "comp-20",
+    "name": "Kaabil Finance",
+    "slug": "kaabil-finance",
+    "industry": "Financial Technology",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Kaabil Finance+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering DS positions."
+  },
+  {
+    "id": "comp-21",
+    "name": "Treebo",
+    "slug": "treebo",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Treebo+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDET, Backend positions."
+  },
+  {
+    "id": "comp-22",
+    "name": "Illuminati Consulting",
+    "slug": "illuminati-consulting",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=Illuminati Consulting+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering LLM Engineer, BA positions."
+  },
+  {
+    "id": "comp-23",
+    "name": "InstaCash",
+    "slug": "instacash",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=InstaCash+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Full Stack Developer positions."
+  },
+  {
+    "id": "comp-24",
+    "name": "Innovaccer",
+    "slug": "innovaccer",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Innovaccer+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Data Analyst positions."
+  },
+  {
+    "id": "comp-25",
+    "name": "NeenOpal (remote)",
+    "slug": "neenopal-remote",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "website": "https://www.google.com/search?q=NeenOpal (remote)+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Data Analyst positions."
+  },
+  {
+    "id": "comp-26",
+    "name": "KickDrum",
+    "slug": "kickdrum",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=KickDrum+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
+  },
+  {
+    "id": "comp-27",
+    "name": "Teleperformance Global Business",
+    "slug": "teleperformance-global-business",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Teleperformance Global Business+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Junior Web Developer positions."
+  },
+  {
+    "id": "comp-28",
+    "name": "Juspay",
+    "slug": "juspay",
+    "industry": "Financial Technology",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=Juspay+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
+  },
+  {
+    "id": "comp-29",
+    "name": "Slice",
+    "slug": "slice",
+    "industry": "Financial Technology",
+    "tier": "Tier 1 (30+ LPA)",
+    "website": "https://www.google.com/search?q=Slice+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
+  },
+  {
+    "id": "comp-30",
+    "name": "Busy Infotech",
+    "slug": "busy-infotech",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Busy Infotech+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
+  },
+  {
+    "id": "comp-31",
+    "name": "Addverb",
+    "slug": "addverb",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=Addverb+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering GET (Software) positions."
+  },
+  {
+    "id": "comp-32",
+    "name": "Deloitte",
+    "slug": "deloitte",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Deloitte+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering DS (PPO) positions."
+  },
+  {
+    "id": "comp-33",
+    "name": "Triumph Motorcycle",
+    "slug": "triumph-motorcycle",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Triumph Motorcycle+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering GET positions."
+  },
+  {
+    "id": "comp-34",
+    "name": "ProcDNA",
+    "slug": "procdna",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=ProcDNA+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering Associate DS positions."
+  },
+  {
+    "id": "comp-35",
+    "name": "Trilogy",
+    "slug": "trilogy",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Trilogy+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE Intern positions."
+  },
+  {
+    "id": "comp-36",
+    "name": "Visa",
+    "slug": "visa",
+    "industry": "Financial Technology",
+    "tier": "Tier 1 (30+ LPA)",
+    "website": "https://www.google.com/search?q=Visa+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE (PPO) positions."
+  },
+  {
+    "id": "comp-37",
+    "name": "BNY",
+    "slug": "bny",
+    "industry": "Financial Technology",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=BNY+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE (PPO) positions."
+  },
+  {
+    "id": "comp-38",
+    "name": "DE Shaw",
+    "slug": "de-shaw",
+    "industry": "Product Engineering",
+    "tier": "Tier 1 (30+ LPA)",
+    "website": "https://www.google.com/search?q=DE Shaw+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE (PPO) positions."
+  },
+  {
+    "id": "comp-39",
+    "name": "ION",
+    "slug": "ion",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=ION+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
+  },
+  {
+    "id": "comp-40",
+    "name": "Cvent",
+    "slug": "cvent",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Cvent+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SWE positions."
+  },
+  {
+    "id": "comp-41",
+    "name": "Prism (OYO)",
+    "slug": "prism-oyo",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "website": "https://www.google.com/search?q=Prism (OYO)+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering BA positions."
+  },
+  {
+    "id": "comp-42",
+    "name": "Curiflow",
+    "slug": "curiflow",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=Curiflow+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
+  },
+  {
+    "id": "comp-43",
+    "name": "Tekion",
+    "slug": "tekion",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=Tekion+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering ASWE positions."
+  },
+  {
+    "id": "comp-44",
+    "name": "EatClub",
+    "slug": "eatclub",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "website": "https://www.google.com/search?q=EatClub+careers",
+    "headquarters": "India / Global",
+    "description": "Official recruiting organization at LNMIIT offering SDE positions."
   }
 ];
+
 
 export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
   {
-    id: 'rec-2026-1',
-    companyId: 'comp-1',
-    companyName: 'Microsoft',
-    industry: 'Software & Cloud Computing',
-    tier: 'Tier 1 (30+ LPA)',
-    batchId: 'y22',
-    graduationYear: 2026,
-    jobRoles: ['Software Engineer', 'Cloud Solution Architect'],
-    eligibleBranches: ['CSE', 'CCE'],
-    packageLPA: 54.5,
-    stipendMonthly: 135000,
-    hiresCount: 16,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 12,
-    verificationStatus: 'Awaiting Verification',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-1",
+    "companyId": "comp-1",
+    "companyName": "Kelly Technology",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "ECE",
+      "CSE"
+    ],
+    "packageLPA": 8.5,
+    "stipendMonthly": 25000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-2026-2',
-    companyId: 'comp-2',
-    companyName: 'Amazon',
-    industry: 'E-Commerce & Cloud Infrastructure',
-    tier: 'Tier 1 (30+ LPA)',
-    batchId: 'y22',
-    graduationYear: 2026,
-    jobRoles: ['Software Development Engineer I (SDE 1)'],
-    eligibleBranches: ['CSE', 'CCE', 'ECE'],
-    packageLPA: 45.0,
-    stipendMonthly: 115000,
-    hiresCount: 20,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 14,
-    verificationStatus: 'Awaiting Verification',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-2",
+    "companyId": "comp-2",
+    "companyName": "Freecharge",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Product Designer"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 9,
+    "stipendMonthly": 25000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-2026-3',
-    companyId: 'comp-6',
-    companyName: 'Arcesium',
-    industry: 'FinTech & Investment Technology',
-    tier: 'Tier 1 (30+ LPA)',
-    batchId: 'y22',
-    graduationYear: 2026,
-    jobRoles: ['Software Engineer (FinTech Core)'],
-    eligibleBranches: ['CSE', 'CCE'],
-    packageLPA: 38.0,
-    stipendMonthly: 105000,
-    hiresCount: 8,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 6,
-    verificationStatus: 'Awaiting Verification',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-3",
+    "companyId": "comp-3",
+    "companyName": "Ritamm Inc.",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SWE"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": null,
+    "stipendMonthly": 22000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": false,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-1',
-    companyId: 'comp-1',
-    companyName: 'Microsoft',
-    industry: 'Software & Cloud Computing',
-    tier: 'Tier 1 (30+ LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Software Engineer', 'Support Engineer'],
-    eligibleBranches: ['CSE', 'CCE'],
-    packageLPA: 51.02,
-    stipendMonthly: 125000,
-    hiresCount: 14,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 9,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-4",
+    "companyId": "comp-4",
+    "companyName": "ZS Associates",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "BTSA"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 14.21,
+    "stipendMonthly": null,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-2',
-    companyId: 'comp-2',
-    companyName: 'Amazon',
-    industry: 'E-Commerce & Cloud Infrastructure',
-    tier: 'Tier 1 (30+ LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Software Development Engineer I (SDE 1)'],
-    eligibleBranches: ['CSE', 'CCE', 'ECE'],
-    packageLPA: 44.5,
-    stipendMonthly: 110000,
-    hiresCount: 22,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 15,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-5",
+    "companyId": "comp-5",
+    "companyName": "Secure Meters",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Embedded developer"
+    ],
+    "eligibleBranches": [
+      "ECE"
+    ],
+    "packageLPA": 7.44,
+    "stipendMonthly": 35000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-3',
-    companyId: 'comp-5',
-    companyName: 'Media.net',
-    industry: 'AdTech & Distributed Systems',
-    tier: 'Tier 1 (30+ LPA)',
-    batchId: 'y19',
-    graduationYear: 2023,
-    jobRoles: ['Site Reliability Engineer', 'Backend Platform Engineer'],
-    eligibleBranches: ['CSE', 'CCE'],
-    packageLPA: 38.0,
-    stipendMonthly: 100000,
-    hiresCount: 8,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 6,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-6",
+    "companyId": "comp-6",
+    "companyName": "MamaEarth (Honasa)",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "AI intern"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 10,
+    "stipendMonthly": 25000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": false,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-4',
-    companyId: 'comp-6',
-    companyName: 'Arcesium',
-    industry: 'FinTech & Investment Technology',
-    tier: 'Tier 1 (30+ LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Software Engineer (FinTech Core)'],
-    eligibleBranches: ['CSE', 'CCE'],
-    packageLPA: 36.5,
-    stipendMonthly: 100000,
-    hiresCount: 6,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 4,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-7",
+    "companyId": "comp-7",
+    "companyName": "Cloudberry",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Sales"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 9.36,
+    "stipendMonthly": null,
+    "hiresCount": 1,
+    "internshipOffered": false,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-5',
-    companyId: 'comp-7',
-    companyName: 'Goldman Sachs',
-    industry: 'Investment Banking & Financial Engineering',
-    tier: 'Tier 1 (30+ LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Analyst - Engineering Division'],
-    eligibleBranches: ['CSE', 'CCE', 'ECE'],
-    packageLPA: 32.0,
-    stipendMonthly: 100000,
-    hiresCount: 7,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 5,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-8",
+    "companyId": "comp-8",
+    "companyName": "Ubona Technologies",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SWE"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 12,
+    "stipendMonthly": 38000,
+    "hiresCount": 2,
+    "internshipOffered": true,
+    "fullTimeOffered": false,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-6',
-    companyId: 'comp-9',
-    companyName: 'Samsung R&D Institute',
-    industry: 'Consumer Electronics & AI Research',
-    tier: 'Tier 2 (15-30 LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Lead Engineer (On-Device AI)', 'Software Developer'],
-    eligibleBranches: ['CSE', 'CCE', 'ECE'],
-    packageLPA: 22.0,
-    stipendMonthly: 60000,
-    hiresCount: 26,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 14,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-9",
+    "companyId": "comp-9",
+    "companyName": "Aignosis",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 6,
+    "stipendMonthly": null,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": false,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-7',
-    companyId: 'comp-10',
-    companyName: 'Qualcomm',
-    industry: 'Semiconductors & Wireless Telecom',
-    tier: 'Tier 2 (15-30 LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Hardware Engineer', 'Modem Firmware Developer'],
-    eligibleBranches: ['ECE', 'CCE'],
-    packageLPA: 24.5,
-    stipendMonthly: 55000,
-    hiresCount: 16,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 10,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-10",
+    "companyId": "comp-10",
+    "companyName": "Tech Shlok",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Power Electronics"
+    ],
+    "eligibleBranches": [
+      "ECE"
+    ],
+    "packageLPA": 5,
+    "stipendMonthly": 15000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-8',
-    companyId: 'comp-11',
-    companyName: 'BNY Mellon',
-    industry: 'Financial Services & Asset Servicing',
-    tier: 'Tier 2 (15-30 LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Application Developer', 'Platform Engineer'],
-    eligibleBranches: ['CSE', 'CCE', 'ECE'],
-    packageLPA: 19.8,
-    stipendMonthly: 50000,
-    hiresCount: 18,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 12,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-11",
+    "companyId": "comp-11",
+    "companyName": "Nav Consulting",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "ECE",
+      "CSE"
+    ],
+    "packageLPA": 11,
+    "stipendMonthly": 25000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-9',
-    companyId: 'comp-12',
-    companyName: 'American Express',
-    industry: 'FinTech & Payments Infrastructure',
-    tier: 'Tier 2 (15-30 LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Engineer I - Big Data & Risk Systems'],
-    eligibleBranches: ['CSE', 'CCE', 'ECE'],
-    packageLPA: 18.2,
-    stipendMonthly: 75000,
-    hiresCount: 15,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 11,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-12",
+    "companyId": "comp-12",
+    "companyName": "SpectovX",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Web dev, App dev, AI"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 12,
+    "stipendMonthly": 20000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-10',
-    companyId: 'comp-13',
-    companyName: 'AMD',
-    industry: 'Semiconductors & High-Performance Computing',
-    tier: 'Tier 2 (15-30 LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Silicon Design Engineer', 'Firmware Engineer'],
-    eligibleBranches: ['ECE', 'CCE'],
-    packageLPA: 21.0,
-    stipendMonthly: 60000,
-    hiresCount: 9,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 6,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-13",
+    "companyId": "comp-13",
+    "companyName": "Hero Steels",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "intern"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "MME"
+    ],
+    "packageLPA": 7,
+    "stipendMonthly": 20000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-11',
-    companyId: 'comp-14',
-    companyName: 'Zomato',
-    industry: 'Quick Commerce & Food Tech',
-    tier: 'Tier 2 (15-30 LPA)',
-    batchId: 'y19',
-    graduationYear: 2023,
-    jobRoles: ['Software Engineer - Platform Systems'],
-    eligibleBranches: ['CSE', 'CCE'],
-    packageLPA: 28.0,
-    stipendMonthly: 80000,
-    hiresCount: 6,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 4,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-14",
+    "companyId": "comp-14",
+    "companyName": "Celebal Technologies",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "DS, DE"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 7,
+    "stipendMonthly": 18000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-12',
-    companyId: 'comp-16',
-    companyName: 'Josh Technology Group',
-    industry: 'Product Engineering & Systems',
-    tier: 'Tier 3 (8-15 LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Associate Software Developer'],
-    eligibleBranches: ['CSE', 'CCE', 'ECE', 'MME'],
-    packageLPA: 14.75,
-    stipendMonthly: 40000,
-    hiresCount: 24,
-    internshipOffered: true,
-    fullTimeOffered: true,
-    ppoConverted: 16,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-15",
+    "companyId": "comp-15",
+    "companyName": "Media.net",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "MME",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": null,
+    "stipendMonthly": 100000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": false,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   },
   {
-    id: 'rec-13',
-    companyId: 'comp-19',
-    companyName: 'Deloitte',
-    industry: 'Consulting & Technology Advisory',
-    tier: 'Tier 3 (8-15 LPA)',
-    batchId: 'y20',
-    graduationYear: 2024,
-    jobRoles: ['Analyst - Technology Consulting'],
-    eligibleBranches: ['CSE', 'CCE', 'ECE', 'MME'],
-    packageLPA: 9.0,
-    stipendMonthly: 35000,
-    hiresCount: 38,
-    internshipOffered: false,
-    fullTimeOffered: true,
-    ppoConverted: 0,
-    verificationStatus: 'Officially Verified',
-    sourceUrl: 'https://placements.lnmiit.ac.in/'
+    "id": "rec-live-16",
+    "companyId": "comp-16",
+    "companyName": "Info Objects",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "DS, DE, GenAI, Java dev, DevOps"
+    ],
+    "eligibleBranches": [
+      "CSE",
+      "CCE",
+      "ECE",
+      "MME"
+    ],
+    "packageLPA": 7,
+    "stipendMonthly": 15000,
+    "hiresCount": 1,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-17",
+    "companyId": "comp-17",
+    "companyName": "Josh Technology Group",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Analyst"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 9.08,
+    "stipendMonthly": 22500,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-18",
+    "companyId": "comp-18",
+    "companyName": "Upvalue Tech",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Full Stack Developer"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 7,
+    "stipendMonthly": 10000,
+    "hiresCount": 1,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-19",
+    "companyId": "comp-19",
+    "companyName": "Honda Cars",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Graduate Engineer Trainee"
+    ],
+    "eligibleBranches": [
+      "MME"
+    ],
+    "packageLPA": 6,
+    "stipendMonthly": 20000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-20",
+    "companyId": "comp-20",
+    "companyName": "Kaabil Finance",
+    "industry": "Financial Technology",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "DS"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 10,
+    "stipendMonthly": 25000,
+    "hiresCount": 3,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-21",
+    "companyId": "comp-21",
+    "companyName": "Treebo",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDET, Backend"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 8,
+    "stipendMonthly": 15000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-22",
+    "companyId": "comp-22",
+    "companyName": "Illuminati Consulting",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "LLM Engineer, BA"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 15,
+    "stipendMonthly": null,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-23",
+    "companyId": "comp-23",
+    "companyName": "InstaCash",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Full Stack Developer"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 9,
+    "stipendMonthly": 15000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-24",
+    "companyId": "comp-24",
+    "companyName": "Innovaccer",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Data Analyst"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "CSE",
+      "ECE",
+      "MME"
+    ],
+    "packageLPA": 10,
+    "stipendMonthly": 40000,
+    "hiresCount": 12,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-25",
+    "companyId": "comp-2",
+    "companyName": "Freecharge",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Backend, Frontend, GenAI, DevOps, QA"
+    ],
+    "eligibleBranches": [
+      "CSE",
+      "CCE",
+      "ECE",
+      "MME"
+    ],
+    "packageLPA": 9,
+    "stipendMonthly": 25000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-26",
+    "companyId": "comp-25",
+    "companyName": "NeenOpal (remote)",
+    "industry": "Product Engineering",
+    "tier": "Tier 4 (<8 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Data Analyst"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CSE",
+      "CCE"
+    ],
+    "packageLPA": 7.5,
+    "stipendMonthly": null,
+    "hiresCount": 1,
+    "internshipOffered": false,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-27",
+    "companyId": "comp-26",
+    "companyName": "KickDrum",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 17,
+    "stipendMonthly": 35000,
+    "hiresCount": 1,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-28",
+    "companyId": "comp-27",
+    "companyName": "Teleperformance Global Business",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Junior Web Developer"
+    ],
+    "eligibleBranches": [
+      "CSE"
+    ],
+    "packageLPA": 10,
+    "stipendMonthly": 20000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-29",
+    "companyId": "comp-28",
+    "companyName": "Juspay",
+    "industry": "Financial Technology",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 27,
+    "stipendMonthly": 40000,
+    "hiresCount": 3,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-30",
+    "companyId": "comp-29",
+    "companyName": "Slice",
+    "industry": "Financial Technology",
+    "tier": "Tier 1 (30+ LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 36,
+    "stipendMonthly": 100000,
+    "hiresCount": 2,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 2,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-31",
+    "companyId": "comp-15",
+    "companyName": "Media.net",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SRE"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 14.5,
+    "stipendMonthly": 100000,
+    "hiresCount": 1,
+    "internshipOffered": true,
+    "fullTimeOffered": false,
+    "ppoConverted": 1,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-32",
+    "companyId": "comp-17",
+    "companyName": "Josh Technology Group",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 13.88,
+    "stipendMonthly": 27500,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-33",
+    "companyId": "comp-17",
+    "companyName": "Josh Technology Group",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Frontend Developer"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 12.59,
+    "stipendMonthly": 20000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-34",
+    "companyId": "comp-30",
+    "companyName": "Busy Infotech",
+    "industry": "Software & Technology Services",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 10,
+    "stipendMonthly": 30000,
+    "hiresCount": 4,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-35",
+    "companyId": "comp-31",
+    "companyName": "Addverb",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "GET (Software)"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 16,
+    "stipendMonthly": 25000,
+    "hiresCount": 1,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-36",
+    "companyId": "comp-31",
+    "companyName": "Addverb",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "GET (Software)"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 16,
+    "stipendMonthly": 25000,
+    "hiresCount": 5,
+    "internshipOffered": true,
+    "fullTimeOffered": false,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-37",
+    "companyId": "comp-32",
+    "companyName": "Deloitte",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "DS (PPO)"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 12.65,
+    "stipendMonthly": 30000,
+    "hiresCount": 8,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 8,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-38",
+    "companyId": "comp-33",
+    "companyName": "Triumph Motorcycle",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "GET"
+    ],
+    "eligibleBranches": [
+      "MME"
+    ],
+    "packageLPA": 12.5,
+    "stipendMonthly": 50000,
+    "hiresCount": 3,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-39",
+    "companyId": "comp-34",
+    "companyName": "ProcDNA",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "Associate DS"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 16.74,
+    "stipendMonthly": 25000,
+    "hiresCount": 2,
+    "internshipOffered": false,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-40",
+    "companyId": "comp-34",
+    "companyName": "ProcDNA",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "BA"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 16.74,
+    "stipendMonthly": 25000,
+    "hiresCount": 5,
+    "internshipOffered": false,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-41",
+    "companyId": "comp-35",
+    "companyName": "Trilogy",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE Intern"
+    ],
+    "eligibleBranches": [
+      "CSE",
+      "CCE",
+      "ECE",
+      "MME"
+    ],
+    "packageLPA": null,
+    "stipendMonthly": 75000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": false,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-42",
+    "companyId": "comp-36",
+    "companyName": "Visa",
+    "industry": "Financial Technology",
+    "tier": "Tier 1 (30+ LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE (PPO)"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 36,
+    "stipendMonthly": 90000,
+    "hiresCount": 4,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 4,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-43",
+    "companyId": "comp-37",
+    "companyName": "BNY",
+    "industry": "Financial Technology",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE (PPO)"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 22,
+    "stipendMonthly": 75000,
+    "hiresCount": 6,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 6,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-44",
+    "companyId": "comp-38",
+    "companyName": "DE Shaw",
+    "industry": "Product Engineering",
+    "tier": "Tier 1 (30+ LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE (PPO)"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "CSE",
+      "ECE"
+    ],
+    "packageLPA": 60,
+    "stipendMonthly": 200000,
+    "hiresCount": 1,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 1,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-45",
+    "companyId": "comp-39",
+    "companyName": "ION",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "CSE",
+      "CCE",
+      "ECE"
+    ],
+    "packageLPA": 17.3,
+    "stipendMonthly": null,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-46",
+    "companyId": "comp-40",
+    "companyName": "Cvent",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SWE"
+    ],
+    "eligibleBranches": [
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 14.73,
+    "stipendMonthly": 40000,
+    "hiresCount": 4,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-47",
+    "companyId": "comp-4",
+    "companyName": "ZS Associates",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "PPS"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 14.2,
+    "stipendMonthly": null,
+    "hiresCount": 13,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-48",
+    "companyId": "comp-41",
+    "companyName": "Prism (OYO)",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "BA"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 9,
+    "stipendMonthly": 40000,
+    "hiresCount": 3,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-49",
+    "companyId": "comp-41",
+    "companyName": "Prism (OYO)",
+    "industry": "Product Engineering",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "ASDE"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 12.5,
+    "stipendMonthly": 50000,
+    "hiresCount": 9,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-50",
+    "companyId": "comp-42",
+    "companyName": "Curiflow",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 15,
+    "stipendMonthly": 60000,
+    "hiresCount": 2,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-51",
+    "companyId": "comp-43",
+    "companyName": "Tekion",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "ASWE"
+    ],
+    "eligibleBranches": [
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 20,
+    "stipendMonthly": 65000,
+    "hiresCount": 4,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 4,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-52",
+    "companyId": "comp-44",
+    "companyName": "EatClub",
+    "industry": "Product Engineering",
+    "tier": "Tier 2 (15-30 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "SDE"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CCE",
+      "CSE"
+    ],
+    "packageLPA": 22,
+    "stipendMonthly": 40000,
+    "hiresCount": 2,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Officially Verified",
+    "sourceUrl": "https://placement27.vercel.app"
   }
 ];
 
+
 export const INITIAL_INTERNSHIP_STATISTICS: InternshipStatistics[] = [
-  {
+    {
     id: 'intern-2026',
     batchId: 'y22',
     graduationYear: 2026,
-    totalInternshipOffers: 256,
-    highestStipendMonthly: 135000,
-    averageStipendMonthly: 56000,
-    medianStipendMonthly: 48000,
-    totalPPOConversions: 164,
-    ppoConversionRate: 64.06,
-    topInternshipCompanies: ['Microsoft', 'Amazon', 'Media.net', 'Arcesium', 'Samsung R&D', 'Qualcomm'],
+    totalInternshipOffers: 88,
+    highestStipendMonthly: 200000,
+    averageStipendMonthly: 41697.67,
+    medianStipendMonthly: 27500,
+    totalPPOConversions: 19,
+    ppoConversionRate: 21.59,
+    topInternshipCompanies: ['DE Shaw', 'Slice', 'Visa', 'BNY', 'Curiflow', 'Tekion', 'Innovaccer'],
     reportingDate: '2026-10-30',
-    verificationStatus: 'Awaiting Verification',
-    methodologyNotes: '🔴 2026 Internship & PPO tracking in progress. PPO evaluations ongoing across pre-final and final semester interns.'
+    verificationStatus: 'Officially Verified',
+    methodologyNotes: 'Live tracked internship & stipend analytics: Avg Stipend ₹41,697.67/mo, Median Stipend ₹27,500/mo, Highest ₹2,00,000/mo (DE Shaw).'
   },
   {
     id: 'intern-2025',

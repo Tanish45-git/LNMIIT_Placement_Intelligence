@@ -2,10 +2,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { PlacementStatistics } from '@/lib/types/placement';
+import { PlacementBatch, PlacementStatistics } from '@/lib/types/placement';
 import {
   ResponsiveContainer,
   LineChart,
+  ComposedChart,
   Line,
   BarChart,
   Bar,
@@ -13,31 +14,83 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
-  AreaChart,
-  Area
+  Legend
 } from 'recharts';
-import { BarChart3, LineChart as LineIcon, CheckSquare, Square, Info } from 'lucide-react';
+import {
+  BarChart3,
+  LineChart as LineIcon,
+  CheckSquare,
+  Square,
+  ChevronDown,
+  ChevronUp
+} from 'lucide-react';
 
 interface PlacementTrendsProps {
   statistics: PlacementStatistics[];
+  batches: PlacementBatch[];
   isDark: boolean;
 }
 
-export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, isDark }) => {
+interface YearBandCursorProps {
+  left?: number;
+  top?: number;
+  width?: number;
+  height?: number;
+  points?: Array<{ x?: number }>;
+  dataCount: number;
+  fill: string;
+  fillOpacity: number;
+}
+
+const YearBandCursor: React.FC<YearBandCursorProps> = ({
+  left = 0,
+  top = 0,
+  width = 0,
+  height = 0,
+  points,
+  dataCount,
+  fill,
+  fillOpacity
+}) => {
+  const center = points?.[0]?.x;
+  if (center === undefined || !width || !height) return null;
+
+  const bandWidth = width / dataCount;
+  const bandX = Math.max(left, Math.min(center - bandWidth / 2, left + width - bandWidth));
+
+  return (
+    <rect
+      className="recharts-tooltip-cursor"
+      x={bandX}
+      y={top}
+      width={bandWidth}
+      height={height}
+      fill={fill}
+      fillOpacity={fillOpacity}
+      pointerEvents="none"
+    />
+  );
+};
+
+export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, batches, isDark }) => {
   const [activeMetric, setActiveMetric] = useState<'compensation' | 'percentage' | 'volume'>('compensation');
-  const [chartType, setChartType] = useState<'line' | 'bar'>('line');
+  const [chartType, setChartType] = useState<'line' | 'bar'>('bar');
+  const [showAllYears, setShowAllYears] = useState(false);
 
   // Sort ascending by year for time-series charts
   const sortedStats = [...statistics].sort((a, b) => a.graduationYear - b.graduationYear);
   const allYears = sortedStats.map((s) => s.graduationYear);
+  const inProgressYears = new Set(
+    batches.filter((batch) => batch.status === 'ongoing').map((batch) => batch.graduationYear)
+  );
+  const completedYears = allYears.filter((year) => !inProgressYears.has(year));
+  const visibleYears = showAllYears ? allYears : completedYears.slice(-6);
 
-  // Multi-year selector state
-  const [selectedYears, setSelectedYears] = useState<number[]>(allYears);
+  const [selectedYears, setSelectedYears] = useState<number[]>(() => completedYears.slice(-6));
 
   const toggleYear = (year: number) => {
     if (selectedYears.includes(year)) {
-      if (selectedYears.length > 2) {
+      if (selectedYears.length > 1) {
         setSelectedYears(selectedYears.filter((y) => y !== year));
       }
     } else {
@@ -67,30 +120,32 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
   const textColor = isDark ? '#94a3b8' : '#64748b';
 
   return (
-    <div className="stat-card p-6 space-y-6">
+    <div className="stat-card space-y-5 p-4 sm:space-y-6 sm:p-6">
       {/* Header and Controls */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800/80 pb-4">
         <div>
           <h2 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
             <span>Historical Placement Trends</span>
-            <span className="text-xs font-normal text-slate-500 dark:text-slate-400">
-              ({selectedYears.length} years selected)
-            </span>
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-            Compare compensation trajectory, offer volumes, and institute placement ratios.
+            Compare package, placement-rate, and offer trends across graduating batches.
           </p>
+          {inProgressYears.size > 0 && (
+            <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+              Ongoing batches are excluded by default; select one to view provisional figures.
+            </p>
+          )}
         </div>
 
         {/* View Switchers */}
         <div className="flex flex-wrap items-center gap-2">
           {/* Metric Selector Buttons */}
-          <div className="inline-flex rounded-lg p-1 bg-slate-100 dark:bg-slate-800 text-xs font-medium">
+          <div className="inline-flex max-w-full flex-wrap rounded-lg bg-slate-100 p-1 text-[10px] font-medium dark:bg-slate-800 sm:text-xs">
             <button
               onClick={() => setActiveMetric('compensation')}
-              className={`px-3 py-1.5 rounded-md transition-all ${
+              className={`rounded-md px-2 py-1.5 transition-all sm:px-3 ${
                 activeMetric === 'compensation'
-                  ? 'bg-white dark:bg-orange-600 text-slate-900 dark:text-white shadow-2xs font-semibold'
+                  ? 'bg-white dark:bg-blue-700 text-slate-900 dark:text-white shadow-2xs font-semibold'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
               }`}
             >
@@ -98,9 +153,9 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
             </button>
             <button
               onClick={() => setActiveMetric('percentage')}
-              className={`px-3 py-1.5 rounded-md transition-all ${
+              className={`rounded-md px-2 py-1.5 transition-all sm:px-3 ${
                 activeMetric === 'percentage'
-                  ? 'bg-white dark:bg-orange-600 text-slate-900 dark:text-white shadow-2xs font-semibold'
+                  ? 'bg-white dark:bg-blue-700 text-slate-900 dark:text-white shadow-2xs font-semibold'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
               }`}
             >
@@ -108,9 +163,9 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
             </button>
             <button
               onClick={() => setActiveMetric('volume')}
-              className={`px-3 py-1.5 rounded-md transition-all ${
+              className={`rounded-md px-2 py-1.5 transition-all sm:px-3 ${
                 activeMetric === 'volume'
-                  ? 'bg-white dark:bg-orange-600 text-slate-900 dark:text-white shadow-2xs font-semibold'
+                  ? 'bg-white dark:bg-blue-700 text-slate-900 dark:text-white shadow-2xs font-semibold'
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
               }`}
             >
@@ -119,7 +174,7 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
           </div>
 
           {/* Chart Type Toggle */}
-          <div className="inline-flex rounded-lg p-1 bg-slate-100 dark:bg-slate-800 text-xs font-medium">
+          <div className="inline-flex rounded-lg bg-slate-100 p-1 text-xs font-medium dark:bg-slate-800">
             <button
               onClick={() => setChartType('line')}
               className={`p-1.5 rounded-md transition-all ${
@@ -148,24 +203,25 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
         </div>
       </div>
 
-      {/* Multi-Year Selection Chips */}
+      {/* Recent batch selector; older batches remain available on demand. */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 mr-1">
-          Graduating Batches:
+        <span className="mr-1 text-xs font-semibold text-slate-500 dark:text-slate-400">
+          {showAllYears ? 'Graduating batches:' : 'Recent batches:'}
         </span>
-        {allYears.map((year) => {
+        {visibleYears.map((year) => {
           const isSelected = selectedYears.includes(year);
           return (
             <button
               key={year}
               onClick={() => toggleYear(year)}
+              aria-pressed={isSelected}
               className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium border transition-all ${
                 isSelected
                   ? 'bg-slate-900 text-white dark:bg-slate-700 dark:text-white border-slate-900 dark:border-slate-600'
                   : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:bg-slate-50'
               }`}
             >
-              {isSelected ? <CheckSquare className="w-3 h-3 text-orange-400" /> : <Square className="w-3 h-3" />}
+              {isSelected ? <CheckSquare className="w-3 h-3 text-blue-300" /> : <Square className="w-3 h-3" />}
               <span>{year}</span>
             </button>
           );
@@ -173,26 +229,47 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
         {selectedYears.length < allYears.length && (
           <button
             onClick={selectAllYears}
-            className="text-xs text-orange-600 dark:text-orange-400 hover:underline font-medium ml-2"
+            className="text-xs text-blue-700 dark:text-blue-400 hover:underline font-medium ml-2"
           >
-            Select All
+            Select all
+          </button>
+        )}
+        {allYears.length > 6 && (
+          <button
+            onClick={() => setShowAllYears((visible) => !visible)}
+            aria-expanded={showAllYears}
+            className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+          >
+            {showAllYears ? 'Fewer years' : 'More years'}
+            {showAllYears ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
           </button>
         )}
       </div>
 
       {/* Interactive Chart Canvas */}
-      <div className="h-[360px] w-full pt-2">
+      <div className="h-[300px] w-full pt-1 sm:h-[340px]">
         <ResponsiveContainer width="100%" height="100%">
           {activeMetric === 'compensation' ? (
             chartType === 'line' ? (
-              <LineChart data={chartData} margin={{ top: 10, right: 20, left: -10, bottom: 0 }}>
+              <ComposedChart data={chartData} margin={{ top: 10, right: 12, left: -10, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
                 <XAxis dataKey="year" stroke={textColor} fontSize={12} tickLine={false} />
                 <YAxis
+                  yAxisId={0}
                   stroke={textColor}
                   fontSize={12}
                   tickLine={false}
                   tickFormatter={(val) => `₹${val}L`}
+                />
+                <YAxis
+                  yAxisId={1}
+                  orientation="right"
+                  stroke={textColor}
+                  fontSize={12}
+                  tickLine={false}
+                  axisLine={false}
+                  tickFormatter={(val) => `₹${val}L`}
+                  width={48}
                 />
                 <Tooltip
                   contentStyle={{
@@ -205,59 +282,143 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
                   }}
                   formatter={(val: any) => [`₹${Number(val).toFixed(2)} LPA`]}
                 />
-                <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
+                <Legend
+                  align="center"
+                  verticalAlign="top"
+                  height={32}
+                  wrapperStyle={{ fontSize: '12px' }}
+                />
                 <Line
                   type="monotone"
                   dataKey="highest"
-                  name="Highest CTC (LPA)"
-                  stroke="#f59e0b"
+                  name="Highest package"
+                  yAxisId={1}
+                  stroke="#0d47a1"
                   strokeWidth={2.5}
-                  dot={{ r: 4 }}
+                  strokeDasharray="6 4"
+                  dot={{ r: 4, fill: '#0d47a1', strokeWidth: 0 }}
                   activeDot={{ r: 6 }}
                 />
                 <Line
                   type="monotone"
                   dataKey="average"
                   name="Average CTC (LPA)"
-                  stroke="#ea580c"
-                  strokeWidth={2.5}
-                  dot={{ r: 4 }}
+                  yAxisId={0}
+                  stroke="#1976d2"
+                  strokeWidth={3}
+                  dot={{ r: 4, fill: '#1976d2', strokeWidth: 0 }}
                   activeDot={{ r: 6 }}
                 />
                 <Line
                   type="monotone"
                   dataKey="median"
-                  name="Median CTC (LPA)"
-                  stroke="#3b82f6"
+                  name="Median package"
+                  yAxisId={0}
+                  stroke="#64a5e8"
                   strokeWidth={2.5}
-                  dot={{ r: 4 }}
+                  dot={{ r: 4, fill: '#64a5e8', strokeWidth: 0 }}
                   activeDot={{ r: 6 }}
                 />
-              </LineChart>
+              </ComposedChart>
             ) : (
-              <BarChart data={chartData} margin={{ top: 10, right: 20, left: -10, bottom: 0 }}>
+              <ComposedChart
+                data={chartData}
+                margin={{ top: 10, right: 12, left: -10, bottom: 0 }}
+              >
                 <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
                 <XAxis dataKey="year" stroke={textColor} fontSize={12} tickLine={false} />
                 <YAxis
+                  yAxisId={0}
                   stroke={textColor}
                   fontSize={12}
                   tickLine={false}
                   tickFormatter={(val) => `₹${val}L`}
                 />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: isDark ? '#111726' : '#ffffff',
-                    borderColor: isDark ? '#1e293b' : '#e2e8f0',
-                    borderRadius: '8px',
-                    fontSize: '12px'
-                  }}
-                  formatter={(val: any) => [`₹${Number(val).toFixed(2)} LPA`]}
+                <YAxis
+                  yAxisId={1}
+                  orientation="right"
+                  stroke={textColor}
+                  fontSize={12}
+                  tickLine={false}
+                  axisLine={false}
+                  tickFormatter={(val) => `₹${val}L`}
+                  width={48}
                 />
-                <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-                <Bar dataKey="highest" name="Highest CTC" fill="#f59e0b" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="average" name="Average CTC" fill="#ea580c" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="median" name="Median CTC" fill="#3b82f6" radius={[4, 4, 0, 0]} />
-              </BarChart>
+                <defs>
+                  <linearGradient id="averagePackageGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#3979dc" />
+                    <stop offset="100%" stopColor="#0d47a1" />
+                  </linearGradient>
+                  <linearGradient id="medianPackageGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#a5ceff" />
+                    <stop offset="100%" stopColor="#64a5e8" />
+                  </linearGradient>
+                  <linearGradient id="highestPackageGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#9aafb8" />
+                    <stop offset="100%" stopColor="#607d8b" />
+                  </linearGradient>
+                </defs>
+                <Tooltip
+                  cursor={
+                    <YearBandCursor
+                      dataCount={chartData.length}
+                      fill={isDark ? '#64748b' : '#94a3b8'}
+                      fillOpacity={isDark ? 0.42 : 0.35}
+                    />
+                  }
+                  content={({ active, payload, label }) => {
+                    if (!active || !payload?.length) return null;
+                    return (
+                      <div className="min-w-48 rounded-xl border border-slate-200 bg-white/95 p-3 shadow-xl backdrop-blur dark:border-slate-700 dark:bg-slate-900/95">
+                        <p className="mb-2 text-sm font-bold text-slate-900 dark:text-white">{label}</p>
+                        <div className="space-y-2">
+                          {payload.map((item) => (
+                            <div key={item.dataKey} className="flex items-center justify-between gap-4 text-xs">
+                              <span className="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+                                <span className="h-2 w-2 rounded-full" style={{ backgroundColor: item.color }} />
+                                {item.name}
+                              </span>
+                              <span className="font-semibold tabular-nums text-slate-900 dark:text-white">
+                                ₹{Number(item.value).toFixed(2)} LPA
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  }}
+                />
+                <Legend
+                  align="center"
+                  verticalAlign="top"
+                  height={32}
+                  wrapperStyle={{ fontSize: '12px' }}
+                />
+                <Bar
+                  dataKey="average"
+                  name="Average package"
+                  fill="url(#averagePackageGradient)"
+                  yAxisId={0}
+                  radius={[5, 5, 0, 0]}
+                  maxBarSize={38}
+                />
+                <Bar
+                  dataKey="median"
+                  name="Median package"
+                  fill="url(#medianPackageGradient)"
+                  yAxisId={0}
+                  radius={[5, 5, 0, 0]}
+                  maxBarSize={38}
+                />
+                <Bar
+                  dataKey="highest"
+                  name="Highest package"
+                  yAxisId={1}
+                  fill="url(#highestPackageGradient)"
+                  radius={[5, 5, 0, 0]}
+                  maxBarSize={38}
+                />
+              </ComposedChart>
             )
           ) : activeMetric === 'percentage' ? (
             chartType === 'line' ? (
@@ -265,7 +426,7 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
                 <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
                 <XAxis dataKey="year" stroke={textColor} fontSize={12} tickLine={false} />
                 <YAxis
-                  domain={[50, 100]}
+                  domain={[0, 100]}
                   stroke={textColor}
                   fontSize={12}
                   tickLine={false}
@@ -321,6 +482,7 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
               <XAxis dataKey="year" stroke={textColor} fontSize={12} tickLine={false} />
               <YAxis stroke={textColor} fontSize={12} tickLine={false} />
               <Tooltip
+                cursor={{ fill: isDark ? '#64748b' : '#d1d5db', fillOpacity: 0.72 }}
                 contentStyle={{
                   backgroundColor: isDark ? '#111726' : '#ffffff',
                   borderColor: isDark ? '#1e293b' : '#e2e8f0',
@@ -335,14 +497,6 @@ export const PlacementTrends: React.FC<PlacementTrendsProps> = ({ statistics, is
             </BarChart>
           )}
         </ResponsiveContainer>
-      </div>
-
-      {/* Chart Footer Note */}
-      <div className="flex items-center gap-2 text-[11px] text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-900/40 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">
-        <Info className="w-4 h-4 text-orange-500 shrink-0" />
-        <span>
-          Note: Placement percentages reflect placed students divided by registered students. Never treating missing or provisional metrics as zero.
-        </span>
       </div>
     </div>
   );
