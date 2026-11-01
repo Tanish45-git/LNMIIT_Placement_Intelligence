@@ -201,27 +201,19 @@ export const INITIAL_STATISTICS: PlacementStatistics[] = [
     graduationYear: 2026,
     totalBatchStrength: 600,
     registeredStudents: 600,
-    studentsPlaced: 104,
-    placementPercentage: 17.3,
+    studentsPlaced: 107,
+    placementPercentage: 17.8,
     highestPackageLPA: 60.0,
-    averagePackageLPA: 14.36,
-    medianPackageLPA: 12.25,
-    totalJobOffers: 104,
-    recruitingCompaniesCount: 44,
-    salaryDistribution: {
-      bracket0To5LPA: 0,
-      bracket5To10LPA: 19,
-      bracket10To15LPA: 46,
-      bracket15To20LPA: 23,
-      bracket20To30LPA: 9,
-      bracket30PlusLPA: 7
-    },
+    averagePackageLPA: 14.22,
+    medianPackageLPA: 12,
+    totalJobOffers: 107,
+    recruitingCompaniesCount: 45,
     reportingDate: '2026-10-30',
     lastCheckedDate: '2026-10-30',
     sourceUrl: 'https://placement27.vercel.app',
-    sourceType: 'Official Website',
-    verificationStatus: 'Officially Verified',
-    methodologyNotes: '🔴 LIVE ACTUAL DATA (placement27.vercel.app): 104 placed out of 600 total students (17.3%). Avg CTC Offered: ₹14.36 LPA, Avg CTC Secured: ₹17.64 LPA, Median CTC Offered: ₹12.25 LPA, Median CTC Secured: ₹14.73 LPA, Median Base Pay: ₹9.00 LPA, Avg Stipend: ₹41,697.67/mo, Median Stipend: ₹27,500/mo. Highest package ₹60.0 LPA (DE Shaw).'
+    sourceType: 'Secondary Tracker',
+    verificationStatus: 'Secondary Source',
+    methodologyNotes: 'Updated from placement27.vercel.app: 107 placed out of 600 students (17.8%) across 45 companies. Average/median CTC offered: ₹14.22/₹12.00 LPA; average/median CTC secured: ₹17.27/₹14.46 LPA; median base pay: ₹9.00 LPA; average/median stipend: ₹41,431.82/₹28,750 per month. Highest listed package remains ₹60 LPA (DE Shaw). Salary-bracket distribution is not published by this source.'
   },
   {
     id: 'stat-2025',
@@ -1391,11 +1383,20 @@ export const INITIAL_COMPANIES: Company[] = [
     "website": "https://www.google.com/search?q=EatClub+careers",
     "headquarters": "India / Global",
     "description": "Official recruiting organization at LNMIIT offering SDE positions."
+  },
+  {
+    "id": "comp-45",
+    "name": "SalesRaga(remote)",
+    "slug": "salesraga-remote",
+    "industry": "Not specified",
+    "tier": "Tier 3 (8-15 LPA)",
+    "description": "Listed in the 2026 placement tracker."
   }
 ];
 
 
 export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
+
   {
     "id": "rec-live-1",
     "companyId": "comp-1",
@@ -1418,7 +1419,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1444,7 +1445,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1470,7 +1471,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": false,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1495,7 +1496,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1518,7 +1519,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1544,7 +1545,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": false,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1570,7 +1571,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": false,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1596,7 +1597,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": false,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1622,7 +1623,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": false,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1645,7 +1646,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1670,7 +1671,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1696,7 +1697,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1720,7 +1721,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1746,7 +1747,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1768,11 +1769,11 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     ],
     "packageLPA": null,
     "stipendMonthly": 100000,
-    "hiresCount": 0,
+    "hiresCount": 1,
     "internshipOffered": true,
     "fullTimeOffered": false,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1798,7 +1799,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1824,7 +1825,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1848,7 +1849,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1871,7 +1872,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1897,7 +1898,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1917,11 +1918,11 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     ],
     "packageLPA": 8,
     "stipendMonthly": 15000,
-    "hiresCount": 0,
+    "hiresCount": 2,
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1947,7 +1948,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1971,7 +1972,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -1997,7 +1998,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2023,7 +2024,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2049,7 +2050,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": false,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2074,7 +2075,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2097,7 +2098,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2123,7 +2124,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2148,7 +2149,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 2,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2173,7 +2174,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": false,
     "ppoConverted": 1,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2199,7 +2200,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2225,7 +2226,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2249,7 +2250,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2275,7 +2276,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2301,7 +2302,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": false,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2327,7 +2328,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 8,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2350,7 +2351,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2376,7 +2377,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": false,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2402,7 +2403,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": false,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2428,7 +2429,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": false,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2453,7 +2454,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 4,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2479,7 +2480,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 6,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2504,7 +2505,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 1,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2518,18 +2519,14 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "jobRoles": [
       "SDE"
     ],
-    "eligibleBranches": [
-      "CSE",
-      "CCE",
-      "ECE"
-    ],
+    "eligibleBranches": [],
     "packageLPA": 17.3,
     "stipendMonthly": null,
     "hiresCount": 0,
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2553,7 +2550,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2578,7 +2575,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2604,7 +2601,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2629,7 +2626,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2655,7 +2652,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2680,7 +2677,7 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 4,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   },
   {
@@ -2706,9 +2703,36 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
     "internshipOffered": true,
     "fullTimeOffered": true,
     "ppoConverted": 0,
-    "verificationStatus": "Officially Verified",
+    "verificationStatus": "Secondary Source",
+    "sourceUrl": "https://placement27.vercel.app"
+  },
+  {
+    "id": "rec-live-53",
+    "companyId": "comp-45",
+    "companyName": "SalesRaga(remote)",
+    "industry": "Not specified",
+    "tier": "Tier 3 (8-15 LPA)",
+    "batchId": "y22",
+    "graduationYear": 2026,
+    "jobRoles": [
+      "AI engineer"
+    ],
+    "eligibleBranches": [
+      "MME",
+      "ECE",
+      "CSE",
+      "CCE"
+    ],
+    "packageLPA": 8,
+    "stipendMonthly": 30000,
+    "hiresCount": 0,
+    "internshipOffered": true,
+    "fullTimeOffered": true,
+    "ppoConverted": 0,
+    "verificationStatus": "Secondary Source",
     "sourceUrl": "https://placement27.vercel.app"
   }
+
 ];
 
 
@@ -2719,14 +2743,14 @@ export const INITIAL_INTERNSHIP_STATISTICS: InternshipStatistics[] = [
     graduationYear: 2026,
     totalInternshipOffers: 88,
     highestStipendMonthly: 200000,
-    averageStipendMonthly: 41697.67,
-    medianStipendMonthly: 27500,
+    averageStipendMonthly: 41431.82,
+    medianStipendMonthly: 28750,
     totalPPOConversions: 19,
     ppoConversionRate: 21.59,
     topInternshipCompanies: ['DE Shaw', 'Slice', 'Visa', 'BNY', 'Curiflow', 'Tekion', 'Innovaccer'],
     reportingDate: '2026-10-30',
-    verificationStatus: 'Officially Verified',
-    methodologyNotes: 'Live tracked internship & stipend analytics: Avg Stipend ₹41,697.67/mo, Median Stipend ₹27,500/mo, Highest ₹2,00,000/mo (DE Shaw).'
+    verificationStatus: 'Secondary Source',
+    methodologyNotes: 'Updated from placement27.vercel.app: average stipend ₹41,431.82/mo and median stipend ₹28,750/mo. Highest listed stipend remains ₹2,00,000/mo (DE Shaw).'
   },
   {
     id: 'intern-2025',
@@ -2740,7 +2764,7 @@ export const INITIAL_INTERNSHIP_STATISTICS: InternshipStatistics[] = [
     ppoConversionRate: 70.25,
     topInternshipCompanies: ['Microsoft', 'Amazon', 'Media.net', 'Arcesium', 'Samsung R&D'],
     reportingDate: '2025-07-20',
-    verificationStatus: 'Officially Verified',
+    verificationStatus: 'Secondary Source',
     methodologyNotes: 'Final consolidated internship statistics for 2025 cohort.'
   },
   {

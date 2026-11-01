@@ -1,6 +1,11 @@
 export type VerificationStatus = 'Officially Verified' | 'Secondary Source' | 'Awaiting Verification';
 
-export type SourceType = 'Official Website' | 'Annual Report PDF' | 'T&P Brochure' | 'NIRF Report';
+export type SourceType =
+  | 'Official Website'
+  | 'Annual Report PDF'
+  | 'T&P Brochure'
+  | 'NIRF Report'
+  | 'Secondary Tracker';
 
 export type BranchCode = 'CSE' | 'CCE' | 'ECE' | 'MME' | 'M&C';
 
