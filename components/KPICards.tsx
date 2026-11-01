@@ -173,15 +173,19 @@ export const KPICards: React.FC<KPICardsProps> = ({ currentStat, previousStat })
             {/* Metric source */}
             <div className="mt-3 flex items-center justify-between gap-1 border-t border-slate-100 pt-2 text-[9px] text-slate-400 dark:border-slate-800/60 dark:text-slate-500 sm:mt-4 sm:pt-3 sm:text-[11px]">
               <div className="flex items-center gap-1.5 truncate max-w-[170px]" title={currentStat.sourceType}>
-                <a
-                  href={currentStat.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
-                >
+                {currentStat.sourceType === 'Secondary Tracker' ? (
                   <span className="truncate">{currentStat.sourceType}</span>
-                  <ExternalLink className="w-3 h-3 shrink-0" />
-                </a>
+                ) : (
+                  <a
+                    href={currentStat.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                  >
+                    <span className="truncate">{currentStat.sourceType}</span>
+                    <ExternalLink className="w-3 h-3 shrink-0" />
+                  </a>
+                )}
               </div>
             </div>
           </div>
