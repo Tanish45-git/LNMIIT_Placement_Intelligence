@@ -201,19 +201,19 @@ export const INITIAL_STATISTICS: PlacementStatistics[] = [
     graduationYear: 2026,
     totalBatchStrength: 600,
     registeredStudents: 600,
-    studentsPlaced: 107,
-    placementPercentage: 17.8,
+    studentsPlaced: 140,
+    placementPercentage: 23.3,
     highestPackageLPA: 60.0,
-    averagePackageLPA: 14.22,
-    medianPackageLPA: 12,
-    totalJobOffers: 107,
-    recruitingCompaniesCount: 45,
-    reportingDate: '2026-10-30',
-    lastCheckedDate: '2026-10-30',
+    averagePackageLPA: 13.53,
+    medianPackageLPA: 11.5,
+    totalJobOffers: 140,
+    recruitingCompaniesCount: 61,
+    reportingDate: '2026-11-20',
+    lastCheckedDate: '2026-11-20',
     sourceUrl: 'https://placement27.vercel.app',
     sourceType: 'Secondary Tracker',
     verificationStatus: 'Secondary Source',
-    methodologyNotes: 'Updated from placement27.vercel.app: 107 placed out of 600 students (17.8%) across 45 companies. Average/median CTC offered: ₹14.22/₹12.00 LPA; average/median CTC secured: ₹17.27/₹14.46 LPA; median base pay: ₹9.00 LPA; average/median stipend: ₹41,431.82/₹28,750 per month. Highest listed package remains ₹60 LPA (DE Shaw). Salary-bracket distribution is not published by this source.'
+    methodologyNotes: 'Updated from placement27.vercel.app: 140 placed out of 600 students (23.3%) across 61 companies. Average/median CTC offered: ₹13.53/₹11.50 LPA; average/median CTC secured: ₹16.63/₹14.20 LPA; median base pay: ₹9.43 LPA; average/median stipend: ₹38,805.56/₹25,000 per month. Highest listed package remains ₹60 LPA (DE Shaw). Salary-bracket distribution is not published by this source.'
   },
   {
     id: 'stat-2025',
@@ -662,76 +662,6 @@ export const INITIAL_STATISTICS: PlacementStatistics[] = [
 ];
 
 export const INITIAL_BRANCH_STATISTICS: BranchStatistics[] = [
-  // 2026 Ongoing Batch
-  {
-    id: 'b-2026-cse',
-    batchId: 'y22',
-    graduationYear: 2026,
-    branchCode: 'CSE',
-    branchName: 'Computer Science and Engineering',
-    totalStudents: 270,
-    registeredStudents: 248,
-    studentsPlaced: 154,
-    placementPercentage: 62.1,
-    highestPackageLPA: 54.5,
-    averagePackageLPA: 16.4,
-    medianPackageLPA: 14.0,
-    totalOffers: 176,
-    topRecruiters: ['Microsoft', 'Amazon', 'Media.net', 'Arcesium', 'Sprinklr'],
-    verificationStatus: 'Awaiting Verification'
-  },
-  {
-    id: 'b-2026-cce',
-    batchId: 'y22',
-    graduationYear: 2026,
-    branchCode: 'CCE',
-    branchName: 'Communication and Computer Engineering',
-    totalStudents: 165,
-    registeredStudents: 152,
-    studentsPlaced: 84,
-    placementPercentage: 55.26,
-    highestPackageLPA: 48.0,
-    averagePackageLPA: 14.6,
-    medianPackageLPA: 12.2,
-    totalOffers: 94,
-    topRecruiters: ['Amazon', 'Samsung R&D', 'Qualcomm', 'BNY Mellon'],
-    verificationStatus: 'Awaiting Verification'
-  },
-  {
-    id: 'b-2026-ece',
-    batchId: 'y22',
-    graduationYear: 2026,
-    branchCode: 'ECE',
-    branchName: 'Electronics and Communication Engineering',
-    totalStudents: 145,
-    registeredStudents: 132,
-    studentsPlaced: 58,
-    placementPercentage: 43.94,
-    highestPackageLPA: 38.5,
-    averagePackageLPA: 11.8,
-    medianPackageLPA: 9.5,
-    totalOffers: 62,
-    topRecruiters: ['Qualcomm', 'Texas Instruments', 'AMD', 'Intel'],
-    verificationStatus: 'Awaiting Verification'
-  },
-  {
-    id: 'b-2026-mme',
-    batchId: 'y22',
-    graduationYear: 2026,
-    branchCode: 'MME',
-    branchName: 'Mechanical-Mechatronics Engineering',
-    totalStudents: 58,
-    registeredStudents: 50,
-    studentsPlaced: 16,
-    placementPercentage: 32.0,
-    highestPackageLPA: 18.0,
-    averagePackageLPA: 8.4,
-    medianPackageLPA: 7.0,
-    totalOffers: 16,
-    topRecruiters: ['Hero MotoCorp', 'Tata Technologies', 'Deloitte Tech'],
-    verificationStatus: 'Awaiting Verification'
-  },
-
   // 2024 Batch
   {
     id: 'b-2024-cse',
@@ -2737,21 +2667,6 @@ export const INITIAL_RECRUITMENT_RECORDS: CompanyRecruitmentRecord[] = [
 
 
 export const INITIAL_INTERNSHIP_STATISTICS: InternshipStatistics[] = [
-    {
-    id: 'intern-2026',
-    batchId: 'y22',
-    graduationYear: 2026,
-    totalInternshipOffers: 88,
-    highestStipendMonthly: 200000,
-    averageStipendMonthly: 41431.82,
-    medianStipendMonthly: 28750,
-    totalPPOConversions: 19,
-    ppoConversionRate: 21.59,
-    topInternshipCompanies: ['DE Shaw', 'Slice', 'Visa', 'BNY', 'Curiflow', 'Tekion', 'Innovaccer'],
-    reportingDate: '2026-10-30',
-    verificationStatus: 'Secondary Source',
-    methodologyNotes: 'Updated from placement27.vercel.app: average stipend ₹41,431.82/mo and median stipend ₹28,750/mo. Highest listed stipend remains ₹2,00,000/mo (DE Shaw).'
-  },
   {
     id: 'intern-2025',
     batchId: 'y21',
@@ -2817,15 +2732,15 @@ export const INITIAL_INTERNSHIP_STATISTICS: InternshipStatistics[] = [
 export const INITIAL_SOURCES: PlacementSource[] = [
   {
     id: 'src-0',
-    title: 'LNMIIT Live Placement Portal — Ongoing Class of 2026 Drive',
-    sourceUrl: 'https://placements.lnmiit.ac.in/statistics',
-    sourceType: 'Official Website',
+    title: 'Placement27 — Ongoing Class of 2026 Drive',
+    sourceUrl: 'https://placement27.vercel.app',
+    sourceType: 'Secondary Tracker',
     batchYear: 2026,
-    publishedDate: '2026-10-30',
-    lastCheckedDate: '2026-10-30',
-    contentHash: 'sha256-live-2026-drive-hash-01',
-    verificationStatus: 'Awaiting Verification',
-    methodologyNotes: 'Live dynamic feed tracking on-campus recruitment tests, selections, and rolling offer acceptance.'
+    publishedDate: '2026-11-20',
+    lastCheckedDate: '2026-11-20',
+    contentHash: 'sha256-live-2026-drive-2026-11-20',
+    verificationStatus: 'Secondary Source',
+    methodologyNotes: 'Live dynamic secondary tracker feed for placements, opportunities, and rolling offer acceptance.'
   },
   {
     id: 'src-1',
@@ -2880,12 +2795,12 @@ export const INITIAL_SOURCES: PlacementSource[] = [
 export const INITIAL_UPDATE_LOGS: DataUpdateLog[] = [
   {
     id: 'log-0',
-    timestamp: '2026-10-30T13:20:00Z',
+    timestamp: '2026-11-20T07:03:37Z',
     eventType: 'AUTO_SYNC_UPDATED',
     status: 'SUCCESS',
-    sourceUrl: 'https://placements.lnmiit.ac.in/statistics',
-    message: '🔴 Class of 2026 (Y22) Ongoing Placement Drive active. Recorded latest on-campus selections: 312 students placed, 348 total offers across 82 recruiting firms.',
-    details: { batchYear: 2026, placed: 312, offers: 348, highestCTC: 54.5 }
+    sourceUrl: 'https://placement27.vercel.app',
+    message: '🔴 Class of 2026 (Y22) Ongoing Placement Drive active. Latest secondary-tracker snapshot: 140 students placed across 61 companies.',
+    details: { batchYear: 2026, placed: 140, opportunities: 68, highestCTC: 60 }
   },
   {
     id: 'log-1',

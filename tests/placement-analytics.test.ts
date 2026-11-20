@@ -55,14 +55,14 @@ describe('LNMIIT Placement Intelligence â€” Comprehensive Dataset Audits (2007â€
     expect(stat2026).toBeDefined();
     expect(stat2026?.studentsPlaced).toBeGreaterThan(0);
     expect(stat2026?.totalJobOffers).toBeGreaterThanOrEqual(stat2026?.studentsPlaced || 0);
-    expect(stat2026?.studentsPlaced).toBe(107);
-    expect(stat2026?.recruitingCompaniesCount).toBe(45);
-    expect(stat2026?.averagePackageLPA).toBe(14.22);
-    expect(stat2026?.medianPackageLPA).toBe(12);
+    expect(stat2026?.studentsPlaced).toBe(140);
+    expect(stat2026?.recruitingCompaniesCount).toBe(61);
+    expect(stat2026?.averagePackageLPA).toBe(13.53);
+    expect(stat2026?.medianPackageLPA).toBe(11.5);
     expect(stat2026?.verificationStatus).toBe('Secondary Source');
 
     const branch2026 = INITIAL_BRANCH_STATISTICS.filter((b) => b.graduationYear === 2026);
-    expect(branch2026.length).toBeGreaterThanOrEqual(4);
+    expect(branch2026).toHaveLength(0);
   });
 
   it('verifies company recruitment and tier categorization', () => {

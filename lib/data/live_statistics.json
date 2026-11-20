@@ -1,25 +1,25 @@
 {
   "success": true,
   "data": {
-    "averageCTCOffered": 14.22,
-    "medianCTCOffered": 12,
-    "averageCTCSecured": 17.27,
-    "medianCTCSecured": 14.46,
-    "medianBasePay": 9,
-    "averageStipend": 41431.82,
-    "medianStipend": 28750,
-    "studentsPlaced": 107,
+    "averageCTCOffered": 13.53,
+    "medianCTCOffered": 11.5,
+    "averageCTCSecured": 16.63,
+    "medianCTCSecured": 14.2,
+    "medianBasePay": 9.43,
+    "averageStipend": 38805.56,
+    "medianStipend": 25000,
+    "studentsPlaced": 140,
     "totalStudents": 600,
-    "placementPercentage": 17.8,
-    "totalUniqueCompanies": 45,
+    "placementPercentage": 23.3,
+    "totalUniqueCompanies": 61,
     "typeBreakdown": {
-      "sli": 8,
-      "fte": 4,
-      "sliFte": 41
+      "sli": 12,
+      "fte": 9,
+      "sliFte": 47
     },
     "statusBreakdown": {
-      "completed": 31,
-      "pending": 22
+      "completed": 35,
+      "pending": 33
     }
   }
 }
