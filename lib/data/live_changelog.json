@@ -2,6 +2,16 @@
   "success": true,
   "data": [
     {
+      "_id": "6b00b30595f2b03e18e12fa5",
+      "action": "Updated",
+      "companyName": "MamaEarth (Honasa)",
+      "details": "Updated MamaEarth (Honasa) placement details",
+      "updateNote": "Students placed 4->5",
+      "createdAt": "2026-11-20T20:52:21.783Z",
+      "updatedAt": "2026-11-20T20:52:21.783Z",
+      "__v": 0
+    },
+    {
       "_id": "6afff0c922645f9a8b7b650f",
       "action": "Updated",
       "companyName": "ArcelorMittal",
@@ -189,16 +199,6 @@
       "updateNote": "",
       "createdAt": "2026-11-06T08:07:31.997Z",
       "updatedAt": "2026-11-06T08:07:31.997Z",
-      "__v": 0
-    },
-    {
-      "_id": "6aed8a6af24450e8f07cc1c8",
-      "action": "Updated",
-      "companyName": "Slice",
-      "details": "Updated Slice placement details",
-      "updateNote": "",
-      "createdAt": "2026-11-06T08:06:02.055Z",
-      "updatedAt": "2026-11-06T08:06:02.055Z",
       "__v": 0
     }
   ]

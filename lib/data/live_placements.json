@@ -473,7 +473,7 @@
       "basePay": null,
       "cgpa": 6,
       "stipend": 25000,
-      "studentsPlaced": 4,
+      "studentsPlaced": 5,
       "status": "Completed",
       "notes": "Performance based ppo",
       "countSliAsPlaced": true,
@@ -484,7 +484,7 @@
         "CSE"
       ],
       "createdAt": "2026-10-19T08:39:25.120Z",
-      "updatedAt": "2026-11-13T09:34:28.518Z",
+      "updatedAt": "2026-11-20T20:52:21.569Z",
       "__v": 0
     },
     {

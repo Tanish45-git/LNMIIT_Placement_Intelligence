@@ -201,19 +201,19 @@ export const INITIAL_STATISTICS: PlacementStatistics[] = [
     graduationYear: 2026,
     totalBatchStrength: 600,
     registeredStudents: 600,
-    studentsPlaced: 140,
-    placementPercentage: 23.3,
+    studentsPlaced: 141,
+    placementPercentage: 23.5,
     highestPackageLPA: 60.0,
     averagePackageLPA: 13.53,
     medianPackageLPA: 11.5,
-    totalJobOffers: 140,
+    totalJobOffers: 141,
     recruitingCompaniesCount: 61,
-    reportingDate: '2026-11-20',
-    lastCheckedDate: '2026-11-20',
+    reportingDate: '2026-11-22',
+    lastCheckedDate: '2026-11-22',
     sourceUrl: 'https://placement27.vercel.app',
     sourceType: 'Secondary Tracker',
     verificationStatus: 'Secondary Source',
-    methodologyNotes: 'Updated from placement27.vercel.app: 140 placed out of 600 students (23.3%) across 61 companies. Average/median CTC offered: ₹13.53/₹11.50 LPA; average/median CTC secured: ₹16.63/₹14.20 LPA; median base pay: ₹9.43 LPA; average/median stipend: ₹38,805.56/₹25,000 per month. Highest listed package remains ₹60 LPA (DE Shaw). Salary-bracket distribution is not published by this source.'
+    methodologyNotes: 'Updated from placement27.vercel.app: 141 placed out of 600 students (23.5%) across 61 companies. Average/median CTC offered: ₹13.53/₹11.50 LPA; average/median CTC secured: ₹16.63/₹14.20 LPA; median base pay: ₹9.43 LPA; average/median stipend: ₹38,805.56/₹25,000 per month. Highest listed package remains ₹60 LPA (DE Shaw). Salary-bracket distribution is not published by this source.'
   },
   {
     id: 'stat-2025',
@@ -2736,9 +2736,9 @@ export const INITIAL_SOURCES: PlacementSource[] = [
     sourceUrl: 'https://placement27.vercel.app',
     sourceType: 'Secondary Tracker',
     batchYear: 2026,
-    publishedDate: '2026-11-20',
-    lastCheckedDate: '2026-11-20',
-    contentHash: 'sha256-live-2026-drive-2026-11-20',
+    publishedDate: '2026-11-22',
+    lastCheckedDate: '2026-11-22',
+    contentHash: 'sha256-live-2026-drive-2026-11-22',
     verificationStatus: 'Secondary Source',
     methodologyNotes: 'Live dynamic secondary tracker feed for placements, opportunities, and rolling offer acceptance.'
   },
@@ -2795,12 +2795,12 @@ export const INITIAL_SOURCES: PlacementSource[] = [
 export const INITIAL_UPDATE_LOGS: DataUpdateLog[] = [
   {
     id: 'log-0',
-    timestamp: '2026-11-20T07:03:37Z',
+    timestamp: '2026-11-20T20:52:21Z',
     eventType: 'AUTO_SYNC_UPDATED',
     status: 'SUCCESS',
     sourceUrl: 'https://placement27.vercel.app',
-    message: '🔴 Class of 2026 (Y22) Ongoing Placement Drive active. Latest secondary-tracker snapshot: 140 students placed across 61 companies.',
-    details: { batchYear: 2026, placed: 140, opportunities: 68, highestCTC: 60 }
+    message: '🔴 Class of 2026 (Y22) Ongoing Placement Drive active. Latest secondary-tracker snapshot: 141 students placed across 61 companies.',
+    details: { batchYear: 2026, placed: 141, opportunities: 68, highestCTC: 60 }
   },
   {
     id: 'log-1',
