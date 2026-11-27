@@ -146,15 +146,15 @@
       "basePay": null,
       "cgpa": 5,
       "stipend": 25000,
-      "studentsPlaced": 0,
-      "status": "Pending",
+      "studentsPlaced": 3,
+      "status": "Completed",
       "notes": "",
       "countSliAsPlaced": false,
       "eligibleBranches": [
         "CSE"
       ],
       "createdAt": "2026-11-10T10:17:01.419Z",
-      "updatedAt": "2026-11-10T10:17:01.419Z",
+      "updatedAt": "2026-11-24T09:24:54.338Z",
       "__v": 0
     },
     {
@@ -453,15 +453,15 @@
       "basePay": 7.44,
       "cgpa": 5,
       "stipend": 35000,
-      "studentsPlaced": 0,
-      "status": "Pending",
+      "studentsPlaced": 1,
+      "status": "Completed",
       "notes": "Mtech only",
       "countSliAsPlaced": false,
       "eligibleBranches": [
         "ECE"
       ],
       "createdAt": "2026-10-21T12:57:40.075Z",
-      "updatedAt": "2026-10-21T13:25:21.500Z",
+      "updatedAt": "2026-11-24T09:26:50.538Z",
       "__v": 0
     },
     {

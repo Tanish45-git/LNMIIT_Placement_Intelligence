@@ -2,6 +2,36 @@
   "success": true,
   "data": [
     {
+      "_id": "6b05585a6904010ad706089d",
+      "action": "Updated",
+      "companyName": "Secure Meters",
+      "details": "Updated Secure Meters placement details",
+      "updateNote": "students placed 0->1",
+      "createdAt": "2026-11-24T09:26:50.760Z",
+      "updatedAt": "2026-11-24T09:26:50.760Z",
+      "__v": 0
+    },
+    {
+      "_id": "6b0557e603fffe0b64877941",
+      "action": "Updated",
+      "companyName": "Insync Analytics",
+      "details": "Updated Insync Analytics placement details",
+      "updateNote": "students placed 0->3",
+      "createdAt": "2026-11-24T09:24:54.555Z",
+      "updatedAt": "2026-11-24T09:24:54.555Z",
+      "__v": 0
+    },
+    {
+      "_id": "6b0557d06904010ad7060879",
+      "action": "Updated",
+      "companyName": "Insync Analytics",
+      "details": "Updated Insync Analytics placement details",
+      "updateNote": "",
+      "createdAt": "2026-11-24T09:24:32.124Z",
+      "updatedAt": "2026-11-24T09:24:32.124Z",
+      "__v": 0
+    },
+    {
       "_id": "6b00b30595f2b03e18e12fa5",
       "action": "Updated",
       "companyName": "MamaEarth (Honasa)",
@@ -169,36 +199,6 @@
       "updateNote": "Students placed 8->9",
       "createdAt": "2026-11-06T09:54:29.254Z",
       "updatedAt": "2026-11-06T09:54:29.254Z",
-      "__v": 0
-    },
-    {
-      "_id": "6aed8b929a7e13ef6a5ba56a",
-      "action": "Added",
-      "companyName": "Kuku Technologies",
-      "details": "Added Kuku Technologies - AI eng., AI Generalist (SLI+FTE)",
-      "updateNote": "",
-      "createdAt": "2026-11-06T08:10:58.384Z",
-      "updatedAt": "2026-11-06T08:10:58.384Z",
-      "__v": 0
-    },
-    {
-      "_id": "6aed8b249a7e13ef6a5ba55e",
-      "action": "Added",
-      "companyName": "Seagate",
-      "details": "Added Seagate - Data Science (SLI)",
-      "updateNote": "",
-      "createdAt": "2026-11-06T08:09:08.482Z",
-      "updatedAt": "2026-11-06T08:09:08.482Z",
-      "__v": 0
-    },
-    {
-      "_id": "6aed8ac3f5f94f252d646963",
-      "action": "Added",
-      "companyName": "SaturnIQ (remote)",
-      "details": "Added SaturnIQ (remote) - AI/SWE intern (SLI)",
-      "updateNote": "",
-      "createdAt": "2026-11-06T08:07:31.997Z",
-      "updatedAt": "2026-11-06T08:07:31.997Z",
       "__v": 0
     }
   ]

@@ -3,14 +3,14 @@
   "data": {
     "averageCTCOffered": 13.53,
     "medianCTCOffered": 11.5,
-    "averageCTCSecured": 16.63,
-    "medianCTCSecured": 14.2,
+    "averageCTCSecured": 16.15,
+    "medianCTCSecured": 12.65,
     "medianBasePay": 9.43,
     "averageStipend": 38805.56,
     "medianStipend": 25000,
-    "studentsPlaced": 141,
+    "studentsPlaced": 145,
     "totalStudents": 600,
-    "placementPercentage": 23.5,
+    "placementPercentage": 24.2,
     "totalUniqueCompanies": 61,
     "typeBreakdown": {
       "sli": 12,
@@ -18,8 +18,8 @@
       "sliFte": 47
     },
     "statusBreakdown": {
-      "completed": 35,
-      "pending": 33
+      "completed": 37,
+      "pending": 31
     }
   }
 }
